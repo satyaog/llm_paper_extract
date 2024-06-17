@@ -48,6 +48,14 @@ def _append_left_indices(df:pd.DataFrame, indices:List[tuple]):
     return df
 
 
+def _cm(annotations:pd.DataFrame, predictions:pd.DataFrame):
+    classes = pd.concat([annotations, predictions])
+    classes.sort_values(inplace=True, ignore_index=True)
+    classes.drop_duplicates(inplace=True, ignore_index=True)
+
+    return confusion_matrix(annotations, predictions, labels=classes), classes
+
+
 def _mlcm(annotations:pd.DataFrame, predictions:pd.DataFrame):
     classes = pd.concat(list(annotations) + list(predictions))
     classes.sort_values(inplace=True, ignore_index=True)
@@ -58,7 +66,7 @@ def _mlcm(annotations:pd.DataFrame, predictions:pd.DataFrame):
         [classes.isin(arr).astype(int) for arr in predictions]
     )
 
-    return mlcm.cm(_ann, _pred)
+    return mlcm.cm(_ann, _pred), classes
 
 
 if __name__ == "__main__":
@@ -99,9 +107,14 @@ if __name__ == "__main__":
     predictions[0] = pd.concat(predictions[0])
     predictions[1] = pd.concat(predictions[1])
 
+    _analysis_dir = (ROOT_DIR / f"data/analysis/")
+    _analysis_dir.mkdir(parents=True, exist_ok=True)
+
+    max_attempt = max(predictions[0].reset_index([0,],drop=True).index)
+
     for label in ("title", "type", "research_field"):
-        for i in range(2):
-            mat = confusion_matrix(
+        for i in range(max_attempt + 1):
+            mat, classes = _cm(
                 annotated[0].loc[:,label],
                 predictions[0].loc[:,i,:].loc[:,label]
             )
@@ -109,16 +122,22 @@ if __name__ == "__main__":
             # if label == "title":
             #     assert (_mat == np.identity(_mat.shape[0])).all()
 
-            print(f"{label}:", mat, sep="\n")
+            (_analysis_dir / f"{label}_{i:02}.csv").write_text(
+                pd.DataFrame(mat, index=classes, columns=classes).to_csv()
+            )
 
     for label in ("sub_research_field","all_research_fields",):
-        for i in range(2):
+        for i in range(max_attempt + 1):
             ann, pred = (
                 annotated[0].loc[:,label],
                 predictions[0].loc[:,i,:].loc[:,label]
             )
 
-            conf_mat, normal_conf_mat = _mlcm(ann, pred)
+            (conf_mat, normal_conf_mat), classes = _mlcm(ann, pred)
+
+            (_analysis_dir / f"{label}_{i:02}.csv").write_text(
+                pd.DataFrame(conf_mat, index=[*classes,""], columns=[*classes,""]).to_csv()
+            )
             print(f"{label}:")
             print("Raw confusion Matrix:")
             print(conf_mat)
@@ -126,7 +145,7 @@ if __name__ == "__main__":
             print(normal_conf_mat)
 
     for label in ("models","datasets","libraries",):
-        for i in range(2):
+        for i in range(max_attempt + 1):
             ann, pred = (
                 annotated[1].loc[:,label,:],
                 predictions[1].loc[:,i,label,:]
@@ -150,16 +169,23 @@ if __name__ == "__main__":
                 ],
             )
 
+            col = "name"
+            (conf_mat, normal_conf_mat), names = _mlcm(
+                [_ann.loc[:,col] for _ann in ann_per_paper],
+                [_pred.loc[:,col] for _pred in pred_per_paper],
+            )
+
+            (_analysis_dir / f"{label}.{col}_{i:02}.csv").write_text(
+                pd.DataFrame(conf_mat, index=[*names,""], columns=[*names,""]).to_csv()
+            )
+
+            print(f"{label}.{col}:")
+            print("Raw confusion Matrix:")
+            print(conf_mat)
+            print("Normalized confusion Matrix (%):")
+            print(normal_conf_mat)
             for col in ann.columns:
                 if col == "name":
-                    conf_mat, normal_conf_mat = _mlcm(
-                        [_ann.loc[:,col] for _ann in ann_per_paper],
-                        [_pred.loc[:,col] for _pred in pred_per_paper],
-                    )
-                    print(f"{label}.{col}:")
-                    print("Raw confusion Matrix:")
-                    print(conf_mat)
-                    print("Normalized confusion Matrix (%):")
-                    print(normal_conf_mat)
+                    pass
                 else:
                     pass

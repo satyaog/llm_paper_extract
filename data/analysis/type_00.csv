@@ -1,0 +1,9 @@
+type,Empirical,Empirical Study,Empirical study,Theoretical,empirical,empirical study,theoretical,theoretical study
+Empirical,3,1,0,0,1,0,0,0
+Empirical Study,0,13,0,0,0,4,0,0
+Empirical study,0,1,4,0,0,0,0,0
+Theoretical,0,0,0,0,0,0,0,1
+empirical,0,2,0,0,4,4,0,1
+empirical study,1,5,0,0,0,3,1,0
+theoretical,0,0,0,0,1,0,2,0
+theoretical study,0,0,0,0,0,1,1,0
