@@ -1,8 +1,11 @@
 instructor
 openai
+mlcm
+pandas
 pydantic
-tiktoken
 pyyaml
+scikit-learn
+tiktoken
 
 # For < py3.10
 eval_type_backport

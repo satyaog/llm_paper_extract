@@ -1,0 +1,8 @@
+*
+!.gitignore
+!analysis/
+!analysis/*
+!merged/
+!merged/*
+!queries/
+!queries/*

@@ -2,25 +2,21 @@
   "description": "This paper proposes a novel self-healing approach for Deep Reinforcement Learning (DRL) systems called Dr. DRL, which integrates intentional forgetting mechanisms into Continual Learning (CL) to address issues like catastrophic forgetting and slow convergence in DRL systems. This approach selectively forgets minor behaviors in order to prioritize the DRL system's key problem-solving skills, thereby accelerating adaptation to environmental drifts and improving overall performance.",
   "title": {
     "value": "An Intentional Forgetting-Driven Self-Healing Method For Deep Reinforcement Learning Systems",
-    "confidence": 1.0,
     "justification": "The title is clearly stated at the beginning of the paper.",
     "quote": "An Intentional Forgetting-Driven Self-Healing Method For Deep Reinforcement Learning Systems"
   },
   "type": {
     "value": "empirical study",
-    "confidence": 0.9,
     "justification": "The paper includes experimental evaluations of the proposed approach using different DRL algorithms and environments.",
     "quote": "In this paper, we propose Dr. DRL, a self-healing approach for DRL systems that integrates a novel mechanism of intentional forgetting into vanilla CL (i.e., standard CL) to overcome its main issues... To demonstrate the effectiveness of Dr. DRL, we evaluate it on purposefully drifted gym environments with different drifting intensities."
   },
   "research_field": {
     "value": "Deep reinforcement learning (DRL)",
-    "confidence": 1.0,
     "justification": "",
     "quote": "Deep reinforcement learning (DRL) is increasingly applied in large-scale productions like Netflix and Facebook. As with most data-driven systems, DRL systems can exhibit undesirable behaviors due to environmental drifts, which of- ten occur in constantly-changing production settings. Continual Learning (CL) is the inherent self-healing approach for adapting the DRL agent in response to the environment’s conditions shifts."
   },
   "sub_research_field": {
     "value": "Continual Learning (CL)",
-    "confidence": 1.0,
     "justification": "",
     "quote": "Deep reinforcement learning (DRL) is increasingly applied in large-scale productions like Netflix and Facebook. As with most data-driven systems, DRL systems can exhibit undesirable behaviors due to environmental drifts, which of- ten occur in constantly-changing production settings. Continual Learning (CL) is the inherent self-healing approach for adapting the DRL agent in response to the environment’s conditions shifts."
   },
@@ -28,45 +24,57 @@
     {
       "name": {
         "value": "Deep Q-Learning (DQN)",
-        "confidence": 1.0,
         "justification": "The paper mentions the use of Deep Q-Learning (DQN) as one of the DRL algorithms used for evaluation.",
         "quote": "three well-established DRL algorithms, namely Deep Q-Learning (DQN) [31], Soft Actor-Critic (SAC) [32], and Proximal Policy Optimization (PPO) [33]."
       },
       "role": "used",
-      "type": "DRL",
+      "type": {
+        "value": "DRL",
+        "justification": "",
+        "quote": ""
+      },
       "mode": "evaluation"
     },
     {
       "name": {
         "value": "Dr. DRL",
-        "confidence": 1.0,
         "justification": "Dr. DRL is the main model proposed in the paper.",
         "quote": "In this paper, we propose Dr. DRL, a self-healing approach for DRL systems that integrates a novel mechanism of intentional forgetting into vanilla CL (i.e., standard CL) to overcome its main issues."
       },
       "role": "contributed",
-      "type": "DRL",
+      "type": {
+        "value": "DRL",
+        "justification": "",
+        "quote": ""
+      },
       "mode": "training"
     },
     {
       "name": {
         "value": "Proximal Policy Optimization (PPO)",
-        "confidence": 1.0,
         "justification": "The paper mentions the use of Proximal Policy Optimization (PPO) as one of the DRL algorithms used for evaluation.",
         "quote": "three well-established DRL algorithms, namely Deep Q-Learning (DQN) [31], Soft Actor-Critic (SAC) [32], and Proximal Policy Optimization (PPO) [33]."
       },
       "role": "used",
-      "type": "DRL",
+      "type": {
+        "value": "DRL",
+        "justification": "",
+        "quote": ""
+      },
       "mode": "evaluation"
     },
     {
       "name": {
         "value": "Soft Actor-Critic (SAC)",
-        "confidence": 1.0,
         "justification": "The paper mentions the use of Soft Actor-Critic (SAC) as one of the DRL algorithms used for evaluation.",
         "quote": "three well-established DRL algorithms, namely Deep Q-Learning (DQN) [31], Soft Actor-Critic (SAC) [32], and Proximal Policy Optimization (PPO) [33]."
       },
       "role": "used",
-      "type": "DRL",
+      "type": {
+        "value": "DRL",
+        "justification": "",
+        "quote": ""
+      },
       "mode": "evaluation"
     }
   ],
@@ -74,7 +82,6 @@
     {
       "name": {
         "value": "Acrobot",
-        "confidence": 1.0,
         "justification": "The paper evaluates the proposed approach using the Acrobot environment.",
         "quote": "In order to demonstrate the effectiveness of Dr. DRL, we evaluate it on purposefully drifted gym [27] environments... CartePole [28], MountainCar [29], and Acrobot [30]"
       },
@@ -83,7 +90,6 @@
     {
       "name": {
         "value": "CartPole",
-        "confidence": 1.0,
         "justification": "The paper evaluates the proposed approach using the CartPole environment.",
         "quote": "In order to demonstrate the effectiveness of Dr. DRL, we evaluate it on purposefully drifted gym [27] environments... CartePole [28], MountainCar [29], and Acrobot [30]"
       },
@@ -92,18 +98,16 @@
     {
       "name": {
         "value": "MountainCar",
-        "confidence": 1.0,
         "justification": "The paper evaluates the proposed approach using the MountainCar environment.",
         "quote": "In order to demonstrate the effectiveness of Dr. DRL, we evaluate it on purposefully drifted gym [27] environments... CartePole [28], MountainCar [29], and Acrobot [30]"
       },
       "role": "used"
     }
   ],
-  "frameworks": [
+  "libraries": [
     {
       "name": {
         "value": "TensorFlow",
-        "confidence": 1.0,
         "justification": "The paper states that the implementation supports TensorFlow and uses it for the empirical evaluation.",
         "quote": "We implemented our approach as an open-source tool using Python 3.7 [49] and it supports Tensorflow (version 2.4.4) [50]."
       },
@@ -112,7 +116,6 @@
     {
       "name": {
         "value": "Gym library",
-        "confidence": 1.0,
         "justification": "",
         "quote": "We evaluated environments from the Gym library (version 0.23.1) [27]"
       },

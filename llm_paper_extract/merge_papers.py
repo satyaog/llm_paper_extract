@@ -21,6 +21,7 @@ import yaml
 
 from . import ROOT_DIR
 from .model import ExtractionResponse, PaperExtractions, empty_paperextractions
+from .utils import str_normalize
 
 _STRIP_RE = r"[a-zA-Z0-9].*[a-zA-Z0-9]"
 _EDITOR = os.environ.get("VISUAL", os.environ.get("EDITOR", None))
@@ -59,12 +60,6 @@ def _open(_f:str):
 def _strip(string):
     m = re.search(_STRIP_RE, string.lower())
     return m[0] if m is not None else string
-
-
-def _normalize(string):
-    string = unicodedata.normalize("NFKC", string).lower()
-    string = re.sub(pattern=r"\s", string=string, repl="")
-    return string
 
 
 def gen_indents(indent=0, skip_first=False):
@@ -204,7 +199,7 @@ def _model_dump(paper_id, paper, model:BaseModel):
                 print(model_dump_yaml)
                 print("\n".join(lines[i:end]))
                 raise
-            if _normalize(quote) not in paper:
+            if str_normalize(quote) not in paper:
                 lines.insert(end, f"{lstrip}## {_WARNING}")
     model_dump_yaml = "\n".join(lines)
     return model_dump_yaml
@@ -371,7 +366,7 @@ def get_papers_from_file(papers: List[str]) -> List[Tuple[str, Path, ExtractionR
             for _f in responses
         )
         for (_,paper_id),(_,_),(_,extractions),_ in responses:
-            extractions_tuple.append((paper_id, _normalize(paper), extractions))
+            extractions_tuple.append((paper_id, str_normalize(paper), extractions))
 
     extractions_tuple.sort(key=lambda _:_[0])
 
