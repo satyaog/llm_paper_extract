@@ -5,15 +5,14 @@ import enum
 import logging
 from pathlib import Path
 from typing import Any, Generic, List, Optional, Tuple, TypeVar
-import typing
 
 import instructor
 import openai
 from openai.types.chat.chat_completion import CompletionUsage
-from pydantic import BaseModel, Field, create_model
+from pydantic import BaseModel, Field
 import pydantic_core
 
-from llm_paper_extract import ROOT_DIR
+from . import ROOT_DIR
 
 logging.basicConfig(level=logging.DEBUG)
 
@@ -36,32 +35,49 @@ _RETRY_MESSAGE = (
 _EMPTY_FLAG = "__EMPTY__"
 
 
-def _caseinsensitive_missing_(cls:enum.Enum, value):
-    if isinstance(value, str):
-        value = value.strip().lower()
-    for member in cls:
-        if member.lower() == value:
-            return member
-    # try:
-    #     # Counting on the string version to save us here
-    #     value = max(0, int(value) - 1)
-    #     if value < 0:
-    #         raise IndexError
-    #     return list(cls)[value]
-    # except ValueError:
-    #     pass
-    # except IndexError:
-    #     pass
-    return None
+# def _caseinsensitive_missing_(cls:enum.Enum, value):
+#     # import ipdb ; ipdb.set_trace()
+#     if isinstance(value, str):
+#         print(f"in:{value}")
+#         value = str_normalize(value.split()[0])
+#         print(f"out:{value}")
+#     for member in cls:
+#         if member.lower() == value:
+#             print(f"out:{member}")
+#             return member
+#     # try:
+#     #     # Counting on the string version to save us here
+#     #     value = max(0, int(value) - 1)
+#     #     if value < 0:
+#     #         raise IndexError
+#     #     return list(cls)[value]
+#     # except ValueError:
+#     #     pass
+#     # except IndexError:
+#     #     pass
+#     return None
+
+
+# def _model_incensitive__eq__(self:BaseModel, other):
+#     for (k1,v1), (k2,v2) in zip(self, other):
+#         if k1 != k2:
+#             return False
+#         if isinstance(v1, str) and isinstance(v2, str):
+#             if v1.lower() != v2.lower():
+#                 return False
+#         elif v1 != v2:
+#             return False
+#     else:
+#         return True
 
 
 class ResearchType(str, enum.Enum):
     EMPIRICAL = "empirical"
     THEORETICAL = "theoretical"
 
-    @classmethod
-    def _missing_(cls, value):
-        return _caseinsensitive_missing_(cls, value)
+    # @classmethod
+    # def _missing_(cls, value):
+    #     return _caseinsensitive_missing_(cls, value)
 
 
 class ModelMode(str, enum.Enum):
@@ -69,9 +85,9 @@ class ModelMode(str, enum.Enum):
     FINE_TUNED = "fine-tuned"
     INFERENCE = "inference"
 
-    @classmethod
-    def _missing_(cls, value):
-        return _caseinsensitive_missing_(cls, value)
+    # @classmethod
+    # def _missing_(cls, value):
+    #     return _caseinsensitive_missing_(cls, value)
 
 
 class Role(str, enum.Enum):
@@ -79,9 +95,9 @@ class Role(str, enum.Enum):
     USED = "used"
     REFERENCED = "referenced"
 
-    @classmethod
-    def _missing_(cls, value):
-        return _caseinsensitive_missing_(cls, value)
+    # @classmethod
+    # def _missing_(cls, value):
+    #     return _caseinsensitive_missing_(cls, value)
 
 
 T = TypeVar("T")
@@ -117,6 +133,16 @@ class Model(BaseModel):
         description=f"Was the Model {' or '.join([mode.value.lower() for mode in ModelMode])} in the scope of the paper"
     )
 
+    # @field_validator("role", mode="after")
+    # @classmethod
+    # def normalize(cls, v: str, _: ValidationInfo) -> str:
+    #     return Role(v) or v
+
+    # @field_validator("mode", mode="after")
+    # @classmethod
+    # def normalize(cls, v: str, _: ValidationInfo) -> str:
+    #     return ModelMode(v) or v
+
 
 class Dataset(BaseModel):
     name: Explained[str] = Field(
@@ -126,6 +152,11 @@ class Dataset(BaseModel):
         description=f"Was the Dataset {' or '.join([role.value.lower() for role in Role])} in the scope of the paper"
     )
 
+    # @field_validator("role", mode="after")
+    # @classmethod
+    # def normalize(cls, v: str, _: ValidationInfo) -> str:
+    #     return Role(v) or v
+
 
 class Library(BaseModel):
     name: Explained[str] = Field(
@@ -134,6 +165,11 @@ class Library(BaseModel):
     role: Role | str = Field(
         description=f"Was the Library {' or '.join([role.value.lower() for role in Role])} in the scope of the paper"
     )
+
+    # @field_validator("role", mode="after")
+    # @classmethod
+    # def normalize(cls, v: str, _: ValidationInfo) -> str:
+    #     return Role(v) or v
 
 
 class PaperExtractions(BaseModel):
@@ -166,58 +202,11 @@ class PaperExtractions(BaseModel):
         description="All Deep Learning Libraries found in the paper"
     )
 
-
-def get_fields(model_cls:BaseModel):
-    fields = {}
-    for field, info in model_cls.model_fields.items():
-        if typing.get_origin(info.annotation) == list:
-            try:
-                sub_fields = get_fields(info.annotation.__args__[0])
-            except AttributeError:
-                fields[field] = (info.annotation, Field(description=info.description))
-                continue
-            fields[field] = (
-                List[create_model(field, **sub_fields)],
-                Field(description=info.description)
-            )
-            continue
-
-        try:
-            sub_fields = get_fields(info.annotation)
-        except AttributeError:
-            fields[field] = (info.annotation, Field(description=info.description))
-            continue
-
-        if info.annotation.__base__ == Explained:
-            sub_fields = {
-                field:(sub_fields["value"][0], Field(description=info.description)),
-                **{k:v for k,v in sub_fields.items() if k != "value"}
-            }
-            cls_name = f"{Explained.__name__}[{field}]"
-        else:
-            cls_name = info.annotation.__name__
-        fields[field] = (create_model(cls_name, **sub_fields), Field(description=info.description))
-
-    return fields
-
-
-def fix_explained_fields():
-    import pdb ; pdb.set_trace()
-    fields = get_fields(PaperExtractions)
-    return create_model(PaperExtractions.__name__, **fields)
-
-
-def print_model(model_cls:BaseModel, indent = 0):
-    for field, info in model_cls.model_fields.items():
-        print(" " * indent, field, info)
-        if typing.get_origin(info.annotation) == list:
-            print_model(info.annotation.__args__[0], indent+2)
-            continue
-
-        try:
-            print_model(info.annotation, indent+2)
-        except AttributeError:
-            pass
+    # @field_validator("type", mode="after")
+    # @classmethod
+    # def normalize(cls, v: str, _: ValidationInfo) -> str:
+    #     v.value = ResearchType(v.value) or v
+    #     return v
 
 
 # PaperExtractions = fix_explained_fields()

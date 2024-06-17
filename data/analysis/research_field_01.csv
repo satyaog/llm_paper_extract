@@ -1,25 +1,20 @@
-research_field,Anomaly Detection,Artificial Intelligence,Computer Vision,ComputerVision,Deep Learning,Deep Reinforcement Learning,Deep reinforcement learning (DRL),Generative Modeling,Graph Neural Network (GNN),Graph Neural Networks,Machine Learning,Mathematics,Medical,Medical Imaging,Music Recommendation Systems,NLP,Natural Language Processing,Natural Language Processing (NLP),Out-of-distribution,Reinforcement Learning,Robotics,Speech Recognition,Weather Forecast,autonomous vehicle systems
-Anomaly Detection,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Artificial Intelligence,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0
-Computer Vision,0,0,4,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-ComputerVision,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Deep Learning,0,0,0,0,21,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Deep Reinforcement Learning,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Deep reinforcement learning (DRL),0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Generative Modeling,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Graph Neural Network (GNN),0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Graph Neural Networks,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Machine Learning,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Mathematics,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Medical,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Medical Imaging,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Music Recommendation Systems,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0
-NLP,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Natural Language Processing,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0
-Natural Language Processing (NLP),0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
-Out-of-distribution,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0
-Reinforcement Learning,0,0,0,0,3,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-Robotics,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0
-Speech Recognition,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0
-Weather Forecast,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-autonomous vehicle systems,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+research_field,anomalydetection,artificialintelligence,autonomousvehiclesystems,computervision,deeplearning,deepreinforcementlearning,generativemodels,graphneuralnetwork,machinelearning,mathematics,medical,medicalimaging,musicrecommendationsystems,naturallanguageprocessing,outofdistribution,reinforcementlearning,robotics,speechrecognition,weatherforecast
+anomalydetection,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+artificialintelligence,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0
+autonomousvehiclesystems,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+computervision,0,0,0,4,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+deeplearning,0,0,0,0,21,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+deepreinforcementlearning,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+generativemodels,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+graphneuralnetwork,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+machinelearning,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+mathematics,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+medical,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+medicalimaging,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+musicrecommendationsystems,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0
+naturallanguageprocessing,0,0,0,0,3,0,0,0,0,0,0,0,0,3,0,0,0,0,0
+outofdistribution,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0
+reinforcementlearning,0,0,0,0,3,1,0,0,0,0,0,0,0,0,0,0,0,0,0
+robotics,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0
+speechrecognition,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+weatherforecast,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0
