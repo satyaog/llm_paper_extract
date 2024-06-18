@@ -42,7 +42,7 @@ _RESEARCH_FIELDS_ALIASES = {
     "fairnessinrecommendersystems": [],
     "generativemodels": ["generativemodeling"],
     "goalconditionedreinforcementlearning": [],
-    "graphneuralnetwork": ["gnn", "gnns", "graphneuralnetworks"],
+    "graphneuralnetwork": ["gnn", "gnns", "graphneuralnetworks", "graphneuralnetworksgnns"],
     "humancomputerinteraction": ["hci"],
     "humanintheloopreinforcementlearning": [],
     "interpretability": [],
@@ -95,7 +95,7 @@ _RESEARCH_FIELDS_ALIASES = {
     "transitnetworkdesigngraphlearning": [],
     "ultrasoundimaging": [],
     "visualcomputing": [],
-    "visualquestionanswering": [],
+    "visualquestionanswering": ["vqa"],
     "weatherforecast": [],
 }
 
@@ -172,20 +172,26 @@ def model2df(model:BaseModel):
 
         if k in ("type",):
             v = str_normalize(v.split()[0])
-        elif k in ("research_field", "sub_research_field"):
-            v = _reasearch_field_alias(str_normalize(v))
+
+        elif k in ("research_field", "sub_research_field",):
+            v, *extra = [_.strip().rstrip("]") for _ in v.split("[[")]
+            assert len(extra) <= 1
+            extra = [_.strip() for _ in extra for _ in _.split(",")]
+            v = [v, *extra]
+            v = map(str_normalize, v)
+            v = list(map(_reasearch_field_alias, v))
 
         if k in ("title", "type", "research_field",):
             paper_1d_df[k] = v
 
         elif k in ("sub_research_field",):
             # This will become a list
-            paper_1d_df.setdefault(k, [])
-            paper_1d_df[k].append(v)
+            paper_1d_df.setdefault("sub_research_fields", [])
+            paper_1d_df["sub_research_fields"] += v
 
         if k in ("research_field", "sub_research_field",):
             paper_1d_df.setdefault("all_research_fields", [])
-            paper_1d_df["all_research_fields"].append(v)
+            paper_1d_df["all_research_fields"] += v
 
         elif k in ("models", "datasets", "libraries",):
             for i, entry in enumerate(v):
@@ -200,7 +206,7 @@ def model2df(model:BaseModel):
 
                     paper_references_df[entry_k][(k, i)] = entry_v
 
-    paper_1d_df["sub_research_field"] = [pd.Series(paper_1d_df["sub_research_field"])]
+    paper_1d_df["sub_research_fields"] = [pd.Series(paper_1d_df["sub_research_fields"])]
     paper_1d_df["all_research_fields"] = [pd.Series(paper_1d_df["all_research_fields"])]
     return pd.DataFrame(paper_1d_df), pd.DataFrame(paper_references_df)
 

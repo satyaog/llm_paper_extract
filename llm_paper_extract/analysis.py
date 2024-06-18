@@ -126,7 +126,7 @@ if __name__ == "__main__":
                 pd.DataFrame(mat, index=classes, columns=classes).to_csv()
             )
 
-    for label in ("sub_research_field","all_research_fields",):
+    for label in ("sub_research_fields","all_research_fields",):
         for i in range(max_attempt + 1):
             ann, pred = (
                 annotated[0].loc[:,label],
