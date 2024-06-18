@@ -16,7 +16,7 @@
     "quote": "We first develop a novel Graph Neural Network (GNN) policy model and train it in an Reinforcement Learning (RL) context to output transit networks that minimize an established cost function."
   },
   "sub_research_field": {
-    "value": "Transit Network Design / Graph Learning",
+    "value": "Transit Network Design [[Graph Learning]]",
     "justification": "The focus is on developing and applying a Graph Neural Network model to operate on graph-structured data in the context of public transit network design.",
     "quote": "Graph Neural Networks (GNNs) are neural network models that are designed to operate on graph-structured data."
   },

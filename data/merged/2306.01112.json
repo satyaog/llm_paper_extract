@@ -13,7 +13,7 @@
   "research_field": {
     "value": "Weather Forecast",
     "justification": "",
-    "quote": ".\"\""
+    "quote": ""
   },
   "sub_research_field": {
     "value": "Time Series Forecasting",

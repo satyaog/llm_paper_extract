@@ -16,7 +16,7 @@
     "quote": "Recent work on human-in-the-loop reinforcement learning ... lifts these assumptions, but still assumes access to either a task-agnostic reward function, task distribution, or prior interface."
   },
   "sub_research_field": {
-    "value": "Human-in-the-loop Reinforcement Learning",
+    "value": "Human-in-the-loop [[Reinforcement Learning]]",
     "justification": "The research focuses on interaction with users, especially using their feedback and commands to improve the learning algorithm.",
     "quote": "To address the high cost of user data, we pre-train value functions on a large offline dataset, and distill them into a policy (i.e., an interface) that infers the user’s desired action from the user’s command signal."
   },

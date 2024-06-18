@@ -16,7 +16,7 @@
     "quote": "JaxPruner aims to accelerate research on sparse neural networks..."
   },
   "sub_research_field": {
-    "value": "Model Compression / Sparse Training / Pruning",
+    "value": "Model Compression [[Sparse Training, Pruning]]",
     "justification": "The paper specifically addresses sparsity in neural networks, which is a sub-field within model compression and training efficiency.",
     "quote": "There are two high-level strategies for achieving parameter sparsity: (1) pruning which aims to obtain sparse networks starting from dense networks for inference efficiency and (2) sparse training which aims to train sparse networks from scratch, thus reducing training cost as well."
   },

@@ -16,7 +16,7 @@
     "quote": "This work explores the scaling properties of weakly supervised classifiers and self-supervised masked autoencoders (MAEs) when training with increasingly larger model backbones and microscopy datasets."
   },
   "sub_research_field": {
-    "value": "Microscopy Image Analysis",
+    "value": "Microscopy [[Image Analysis]]",
     "justification": "The focus is on analyzing microscopy images specifically.",
     "quote": "Featurizing microscopy images for use in biological research remains a significant challenge."
   },

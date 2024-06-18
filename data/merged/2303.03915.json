@@ -16,7 +16,7 @@
     "quote": "As language models grow ever larger, the need for large-scale high-quality text datasets has never been more pressing, especially in multilingual settings."
   },
   "sub_research_field": {
-    "value": "Multilingual Datasets and Large Language Models",
+    "value": "Multilingual [[Large Language Models]]",
     "justification": "The sub-field focuses on multilingual datasets and their use in training large-scale language models, aligning with the paper's goal of creating and analyzing a multilingual dataset for the BLOOM language model.",
     "quote": "This paper documents the data creation and curation efforts undertaken by BigScience to assemble the Responsible Open-science Open-collaboration Text Sources (ROOTS) corpus, a 1.6TB dataset spanning 59 languages that was used to train the 176-billion-parameter BigScience Large Opencollaboration Open-access Multilingual language model."
   },

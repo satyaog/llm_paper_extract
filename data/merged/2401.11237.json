@@ -16,7 +16,7 @@
     "quote": "Our work shows that combinatorial generalisation is also required to solve tasks in the context of RL."
   },
   "sub_research_field": {
-    "value": "Goal-conditioned Reinforcement Learning",
+    "value": "Goal-conditioned [[Reinforcement Learning]]",
     "justification": "The paper discusses the importance of goal-conditioned policies and their ability to generalize to new state-goal pairs during testing.",
     "quote": "We will study the problem of goal-conditioned RL in a controlled Markov process with states s ∈ S and actions a ∈ A."
   },

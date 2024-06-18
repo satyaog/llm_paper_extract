@@ -16,7 +16,7 @@
     "quote": "We propose X TREME -U P, a benchmark defined by: its focus on the scarce-data scenario rather than zero-shot; its focus on user-centric tasks."
   },
   "sub_research_field": {
-    "value": "Multilingual and Low-Resource Language Processing",
+    "value": "Multilingual [[Low-Resource, Language Processing]]",
     "justification": "The focus is on under-represented languages and tasks that can be tackled using textual data, specifically for languages with scarce data.",
     "quote": "XTREME-UP focuses on under-represented languages and user-centric tasks, creating new data for under-represented tasks and languages."
   },

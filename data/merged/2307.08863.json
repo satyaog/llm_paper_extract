@@ -16,7 +16,7 @@
     "quote": "We study P -player differentiable games f : RP ×N 7→ RP that map vectors of policies xi to vectors of expected returns yi"
   },
   "sub_research_field": {
-    "value": "Multi-Agent Reinforcement Learning",
+    "value": "Multi-Agent [[Reinforcement Learning]]",
     "justification": "The paper specifically discusses learning in multi-agent systems and the interactions between agents.",
     "quote": "Gradient-based learning in multi-agent systems is difficult because the gradient derives from a first-order model which does not account for the interaction between agents’ learning processes."
   },

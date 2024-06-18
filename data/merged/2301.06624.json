@@ -16,7 +16,7 @@
     "quote": "Deep learning methods typically depend on the availability of labeled data, which is expensive and time-consuming to obtain."
   },
   "sub_research_field": {
-    "value": "Medical Image Segmentation",
+    "value": "Medical [[Image Segmentation]]",
     "justification": "The primary application of the proposed method is within the domain of medical image segmentation, specifically dealing with cardiac MRI data.",
     "quote": "While frameworks for active learning have been widely explored in the context of classification of natural images, they have been only sparsely used in medical image segmentation."
   },

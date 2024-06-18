@@ -16,7 +16,7 @@
     "quote": "Maintaining energy sufficiency of a battery-powered robot system is essential for long-term missions."
   },
   "sub_research_field": {
-    "value": "Energy Management in Robotic Systems",
+    "value": "Energy Management [[Robotic Systems]]",
     "justification": "The research specifically addresses the problem of ensuring energy sufficiency for robots in various mission environments, making it a study in the sub-field of energy management within robotics.",
     "quote": "This capability should be flexible enough to deal with different types of environment and a wide range of missions, while constantly guaranteeing that the robot does not run out of energy."
   },

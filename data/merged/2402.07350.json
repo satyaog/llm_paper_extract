@@ -16,7 +16,7 @@
     "quote": ""
   },
   "sub_research_field": {
-    "value": "AI Ethics and Human-Computer Interaction (HCI)",
+    "value": "AI Ethics [[Human-Computer Interaction (HCI)]]",
     "justification": "The paper delves into the ethical considerations and human-computer interaction aspects of designing AI systems that are not conforming to current 'moral' standards, making it relevant to AI Ethics and HCI.",
     "quote": "Our work is only a starting point, intending to spark tough conversations in the community about what 'safety', 'harmlessness', and 'morality' really mean..."
   },

@@ -16,9 +16,9 @@
     "quote": "Stack-augmented recurrent neural networks (RNNs) have been of interest to the deep learning community for some time."
   },
   "sub_research_field": {
-    "value": "Long-Term Memory",
+    "value": "Long-Term Memory [[Recurrent Neural Networks, Memory]]",
     "justification": "",
-    "quote": "Recurrent Neural Networks, Memory"
+    "quote": ""
   },
   "models": [
     {

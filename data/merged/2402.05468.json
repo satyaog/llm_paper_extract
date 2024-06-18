@@ -16,9 +16,9 @@
     "quote": "Sampling from a target distribution is a ubiquitous task at the heart of various methods in machine learning, optimization, and statistics."
   },
   "sub_research_field": {
-    "value": "Optimization in Deep Learning",
+    "value": "Optimization [[Diffusion Models]]",
     "justification": "",
-    "quote": "Diffusion Models"
+    "quote": ""
   },
   "models": [
     {

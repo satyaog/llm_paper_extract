@@ -16,7 +16,7 @@
     "quote": "Pretrained language models (PLMs) are today the primary model for natural language processing."
   },
   "sub_research_field": {
-    "value": "Cross-lingual Transfer Learning",
+    "value": "Cross-lingual [[Transfer Learning]]",
     "justification": "The study aims to enhance the adaptability of PLMs to new languages, making it a contribution to cross-lingual transfer learning.",
     "quote": "We study whether this forgetting approach creates a PLM that can easily rewire...to an unseen (possibly distant) language."
   },

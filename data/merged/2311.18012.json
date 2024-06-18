@@ -16,7 +16,7 @@
     "quote": "In this work, we use score-based generative models [14, 15] as principled priors [16] to perform Bayesian inference for radio interferometric imaging."
   },
   "sub_research_field": {
-    "value": "Bayesian Inference and Generative Models",
+    "value": "Bayesian Inference [[Generative Models]]",
     "justification": "The approach revolves around Bayesian inference using score-based generative models as priors.",
     "quote": "We use score-based priors derived from optical images of galaxies to recover images of protoplanetary disks from the DSHARP survey."
   },

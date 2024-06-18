@@ -11,12 +11,12 @@
     "quote": "Through a series of empirical results, we show that our fairness framework enables us to outperform a series of accepted fairness benchmarks in both performance and recommendation of lesser known content on two important music recommendation tasks."
   },
   "research_field": {
-    "value": "Music Recommendation Systems",
+    "value": "Recommendation Systems",
     "justification": "The research is focused on improving music recommendation systems by mitigating popularity bias.",
     "quote": "As online music platforms grow, music recommender systems play a vital role in helping users navigate and discover content within their vast musical databases."
   },
   "sub_research_field": {
-    "value": "Fairness in Recommender Systems",
+    "value": "Music [[Fairness]]",
     "justification": "The paper addresses fairness specifically in the context of music recommender systems.",
     "quote": "To mitigate this issue we propose a domain-aware, individual fairness-based approach which addresses popularity bias in graph neural network (GNNs) based recommender systems."
   },

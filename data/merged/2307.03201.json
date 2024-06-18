@@ -16,9 +16,9 @@
     "quote": "Recent work has proposed a power law relationship, referred to as “scaling laws,” between the performance of artiﬁcial intelligence (AI) models and aspects of those models’ design (e.g., dataset size)."
   },
   "sub_research_field": {
-    "value": "Evaluation Metrics",
+    "value": "Evaluation Metrics [[Scaling Laws, Large Language Models]]",
     "justification": "The paper discusses the validity and implications of evaluation metrics in the context of scaling laws for AI models, highlighting issues such as metric incompatibility and non-stationarity.",
-    "quote": "Scaling Laws, Large Language Models"
+    "quote": ""
   },
   "models": [],
   "datasets": [

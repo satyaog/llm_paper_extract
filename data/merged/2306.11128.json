@@ -16,7 +16,7 @@
     "quote": "In this article, we propose a novel multi-agent reinforcement learning (MARL) algorithm CAM MARL, which involves modeling the actions of other agents in different situations in the form of confident sets."
   },
   "sub_research_field": {
-    "value": "Multi-Agent Reinforcement Learning",
+    "value": "Multi-Agent [[Reinforcement Learning]]",
     "justification": "The core contribution of the paper is an algorithm designed for multi-agent reinforcement learning scenarios.",
     "quote": "In this article, we propose a novel multi-agent reinforcement learning (MARL) algorithm CAM MARL , which involves modeling the actions of other agents in different situations in the form of confident sets, i.e., sets containing their true actions with a high probability."
   },

@@ -16,7 +16,7 @@
     "quote": "In this work, we applied two well-established safety engineering frameworks (FMEA, STPA) to a case study involving text-to-image models at three stages of the ML product development pipeline: data processing, integration of a T2I model with other models, and use."
   },
   "sub_research_field": {
-    "value": "Model Safety, Ethics in AI",
+    "value": "Model Safety [[Ethics in AI]]",
     "justification": "The focus of the paper is on applying safety frameworks to identify social and ethical risks in AI models, particularly text-to-image models.",
     "quote": "By conducting this type of analysis on the process (and not the model itself), a practitioner can identify both known and novel failures (and their resulting harms) that can emerge from training data processing choices."
   },

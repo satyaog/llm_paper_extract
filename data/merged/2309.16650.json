@@ -16,9 +16,9 @@
     "quote": "For robots to perform a wide variety of tasks, they require a 3D representation of the world that is semantically rich, yet compact and efficient for task-driven perception and planning.... In this work, we propose ConceptGraphs, an open-vocabulary graph-structured represen- tation for 3D scenes."
   },
   "sub_research_field": {
-    "value": "Scene Understanding",
+    "value": "Scene Understanding [[Scene Planning]]",
     "justification": "The paper focuses on 3D scene graphs which are an advanced representation for understanding the spatial relationships and semantic information in 3D scenes.",
-    "quote": "[Scene Planning] ConceptGraphs focuses on the construction of the open- vocabulary 3D scene graphs for scene understanding and planning."
+    "quote": "ConceptGraphs focuses on the construction of the open- vocabulary 3D scene graphs for scene understanding and planning."
   },
   "models": [
     {
