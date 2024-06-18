@@ -126,7 +126,7 @@ if __name__ == "__main__":
                 pd.DataFrame(mat, index=classes, columns=classes).to_csv()
             )
 
-    for label in ("sub_research_fields","all_research_fields",):
+    for label in ("sub_research_fields", "all_research_fields",):
         for i in range(max_attempt + 1):
             ann, pred = (
                 annotated[0].loc[:,label],
@@ -144,7 +144,7 @@ if __name__ == "__main__":
             print("Normalized confusion Matrix (%):")
             print(normal_conf_mat)
 
-    for label in ("models","datasets","libraries",):
+    for label in ("models", "datasets", "libraries",):
         for i in range(max_attempt + 1):
             ann, pred = (
                 annotated[1].loc[:,label,:],
@@ -184,8 +184,38 @@ if __name__ == "__main__":
             print(conf_mat)
             print("Normalized confusion Matrix (%):")
             print(normal_conf_mat)
+
             for col in ann.columns:
-                if col == "name":
-                    pass
+                if col in ("role", "mode",):
+                    _ann = []
+                    _pred = []
+                    for ann_models, pred_models in zip(ann_per_paper, pred_per_paper):
+                        for ann_idx in ann_models.index:
+                            for pred_idx in pred_models.index:
+                                if ann_models.loc[ann_idx, "name"] == pred_models.loc[pred_idx, "name"]:
+                                    # import ipdb ; ipdb.set_trace()
+                                    _ann.append(ann_models.loc[ann_idx:ann_idx])
+                                    _pred.append(pred_models.loc[pred_idx:pred_idx])
+                                    break
+
+                    _ann, _pred = (
+                        pd.concat(_ann).reset_index(drop=True),
+                        pd.concat(_pred).reset_index(drop=True)
+                    )
+
+                    (conf_mat, normal_conf_mat), classes = _mlcm(
+                        [_ann.loc[idx:idx,col] for idx in _ann.index],
+                        [_pred.loc[idx:idx,col] for idx in _pred.index],
+                    )
+
+                    (_analysis_dir / f"{label}.{col}_{i:02}.csv").write_text(
+                        pd.DataFrame(conf_mat, index=[*classes,""], columns=[*classes,""]).to_csv()
+                    )
+
+                    print(f"{label}.{col}:")
+                    print("Raw confusion Matrix:")
+                    print(conf_mat)
+                    print("Normalized confusion Matrix (%):")
+                    print(normal_conf_mat)
                 else:
                     pass
