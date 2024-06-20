@@ -174,20 +174,6 @@
         "quote": ""
       },
       "mode": "training"
-    },
-    {
-      "name": {
-        "value": "ViT-B/16",
-        "justification": "Comparative Table",
-        "quote": ""
-      },
-      "role": "used",
-      "type": {
-        "value": "Vision Transformer",
-        "justification": "ViT stands for Vision Transformer, a type of model used in the paper.",
-        "quote": ""
-      },
-      "mode": "training"
     }
   ],
   "datasets": [

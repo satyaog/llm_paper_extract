@@ -52,20 +52,6 @@
     {
       "name": {
         "value": "Perceiver",
-        "justification": "The Perceiver model is specifically analyzed with respect to its architecture's potential to meet the indicators for consciousness.",
-        "quote": "These include Transformer-based large language models and the Perceiver architecture, which we analyse with respect to the global workspace theory."
-      },
-      "role": "referenced",
-      "type": {
-        "value": "neural network architecture",
-        "justification": "The Perceiver model is analyzed in the context of neural network architecture, particularly in how it processes and integrates information.",
-        "quote": "The Perceiver architecture was designed to address a weakness of Transformers."
-      },
-      "mode": "inference"
-    },
-    {
-      "name": {
-        "value": "Perceiver",
         "justification": "The Perceiver is evaluated concerning its implementation of self-attention and its applicability to global workspace theory.",
         "quote": "The Perceiver architecture allows for sequences of inputs to be processed diachronically, with the latent space state updating with each new input, but also influenced by its previous state."
       },

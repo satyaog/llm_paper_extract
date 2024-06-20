@@ -34,20 +34,6 @@
         "quote": "We implement a learning approach based on variational autoencoders (VAEs) (Kingma and Welling, 2014) which learns the mixing function, the transition distribution and the causal graph."
       },
       "mode": "training"
-    },
-    {
-      "name": {
-        "value": "Variational Autoencoder (VAE)",
-        "justification": "VAEs are commonly used for learning latent variable models, and the paper mentions their use explicitly for estimation.",
-        "quote": "Lastly, we propose an estimation procedure based on variational autoencoders and a sparsity constraint and demonstrate it on various synthetic datasets."
-      },
-      "role": "used",
-      "type": {
-        "value": "latent variable model",
-        "justification": "VAEs are known for modeling latent variables in high-dimensional data.",
-        "quote": "Lastly, we propose an estimation procedure based on variational autoencoders and a sparsity constraint."
-      },
-      "mode": "trained"
     }
   ],
   "datasets": [

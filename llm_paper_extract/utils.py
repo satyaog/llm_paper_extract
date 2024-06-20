@@ -4,6 +4,7 @@ import re
 import sys
 import typing
 import unicodedata
+import warnings
 
 import pandas as pd
 from pydantic import BaseModel, Field, create_model
@@ -12,6 +13,17 @@ from .model import Explained, Model, PaperExtractions
 
 PAPERS_TO_IGNORE={"data/cache/arxiv/2404.09932.txt",}
 
+_MODE_ALIASES = {
+    "trained": ["training", "evaluation", "pretraining"],
+    "inference": [],
+    "finetuned": [],
+}
+
+_MODE_ALIASES = {
+    alias: k
+    for k, v in _MODE_ALIASES.items()
+    for alias in {k, *v}
+}
 
 _RESEARCH_FIELDS_ALIASES = {
     "3dreconstruction": [],
@@ -106,6 +118,10 @@ _RESEARCH_FIELDS_ALIASES = {
 }
 
 
+def _mode_aliases(mode):
+    return _MODE_ALIASES.get(mode, mode)
+
+
 def _reasearch_field_alias(field):
     return _RESEARCH_FIELDS_ALIASES.get(field, field)
 
@@ -179,7 +195,7 @@ def model2df(model:BaseModel):
             extra = [_.strip() for _ in extra for _ in _.split(",")]
             v = [v, *extra]
             v = map(str_normalize, v)
-            v = list(map(_reasearch_field_alias, v))
+            v = sorted(set(map(_reasearch_field_alias, v)))
 
         if k in ("title", "type", "research_field",):
             paper_1d_df[k] = v
@@ -201,14 +217,35 @@ def model2df(model:BaseModel):
 
                     if entry_k in ("name", "type",):
                         entry_v = str_normalize(entry_v)
-                    elif entry_k in ("role", "mode",):
+                    elif entry_k in ("mode",):
+                        try:
+                            entry_v = _mode_aliases(str_normalize(entry_v.split()[0]))
+                        except IndexError:
+                            entry_v = None
+                    elif entry_k in ("role",):
                         entry_v = str_normalize(entry_v.split()[0])
 
                     paper_references_df[entry_k][(k, i)] = entry_v
 
     paper_1d_df["sub_research_fields"] = [pd.Series(paper_1d_df["sub_research_fields"])]
     paper_1d_df["all_research_fields"] = [pd.Series(paper_1d_df["all_research_fields"])]
-    return pd.DataFrame(paper_1d_df), pd.DataFrame(paper_references_df)
+    paper_1d_df, paper_references_df = (
+        pd.DataFrame(paper_1d_df),
+        pd.DataFrame(paper_references_df)
+    )
+
+    for group in ("models", "datasets", "libraries",):
+        try:
+            _l = paper_references_df.loc[group]["name"]
+            _s = paper_references_df.loc[group]["name"].drop_duplicates()
+        except KeyError:
+            _l = []
+            _s = set()
+
+        if len(_l) != len(_s):
+            warnings.warn(f"Possibly duplicated {group} in\n{_l}")
+
+    return paper_1d_df, paper_references_df
 
 
 def print_model(model_cls:BaseModel, indent = 0):
@@ -226,7 +263,14 @@ def print_model(model_cls:BaseModel, indent = 0):
 
 def str_normalize(string):
     string = unicodedata.normalize("NFKC", string).lower()
-    string = re.sub(pattern=r"[^a-z0-9]", string=string, repl="")
+    string = [_s.split("}}") for _s in string.split("{{")]
+    string = sum(string, [])
+    exclude = string[1:2]
+    string = list(map(
+        lambda _s:re.sub(pattern=r"[^a-z0-9]", string=_s, repl=""),
+        string[:1] + string[2:]
+    ))
+    string = "".join(string[:1] + exclude + string[1:])
     return string
 
 

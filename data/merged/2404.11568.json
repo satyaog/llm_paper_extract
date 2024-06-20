@@ -51,7 +51,7 @@
     },
     {
       "name": {
-        "value": "Hybrid GPS++",
+        "value": "Hybrid {{GPS++}}",
         "justification": "The Hybrid GPS++ model is investigated for its scalability and performance in the paper.",
         "quote": "Our graph Transformer and hybrid models make use of GPS++ model, which is known for its scalable nature on quantum property predictions."
       },
@@ -60,20 +60,6 @@
         "value": "Graph Neural Network",
         "justification": "Hybrid GPS++ is a type of Graph Neural Network that combines message-passing and attention-based mechanisms.",
         "quote": "Our graph Transformer and hybrid models make use of GPS++ model, which is known for its scalable nature on quantum property predictions."
-      },
-      "mode": "Training"
-    },
-    {
-      "name": {
-        "value": "Hybrid GPS++",
-        "justification": "The paper uses the Hybrid GPS++ model for its scalability evaluations.",
-        "quote": "GPS++. This is a hybrid model leveraging the MPNN++ inductive bias while providing the flexibility of self-attention-based modules."
-      },
-      "role": "Used",
-      "type": {
-        "value": "Hybrid Graph Neural Network",
-        "justification": "Hybrid GPS++ combines elements of both MPNN++ and graph transformers, aimed at improving scalability and performance.",
-        "quote": "our graph Transformer and hybrid models make use of GPS++ model, which is known for its scalable nature on quantum property predictions."
       },
       "mode": "Training"
     },

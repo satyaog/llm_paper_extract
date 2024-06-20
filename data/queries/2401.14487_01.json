@@ -82,7 +82,7 @@
       },
       {
         "name": {
-          "value": "UNet++",
+          "value": "{{UNet++}}",
           "justification": "This model is used in a robustness analysis within the paper.",
           "quote": "We study the impact of our proposed loss when using other recent state-of-the-art segmentation networks including... UNet++."
         },

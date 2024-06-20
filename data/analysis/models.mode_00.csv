@@ -1,9 +1,6 @@
-,evaluation,finetuned,inference,none,pretraining,trained,training,
-evaluation,0,0,0,0,0,0,3,0
-finetuned,0,7,1,0,0,1,0,0
-inference,0,3,34,5,0,4,2,0
-none,0,0,0,0,0,0,0,0
-pretraining,0,0,0,0,0,0,0,0
-trained,0,3,13,0,1,33,2,0
-training,0,2,0,0,0,2,15,0
-,0,0,0,0,0,0,0,0
+,finetuned,inference,trained,,
+finetuned,7,1,1,0,0
+inference,3,33,5,5,0
+trained,4,13,53,0,0
+,0,0,0,0,0
+,0,0,0,0,0

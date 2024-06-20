@@ -33,7 +33,7 @@
         "justification": "AlphaGo used a combination of deep neural networks and Monte Carlo tree search in a model-free RL approach.",
         "quote": "..., such as ... AlphaGo (Silver et al., 2016) ..."
       },
-      "mode": "N/A"
+      "mode": ""
     },
     {
       "name": {
@@ -47,7 +47,7 @@
         "justification": "AlphaStar is recognized for its model-free RL technique in playing StarCraft II.",
         "quote": "..., such as ... AlphaStar (Vinyals et al., 2019) ..."
       },
-      "mode": "N/A"
+      "mode": ""
     },
     {
       "name": {
@@ -187,7 +187,7 @@
         "justification": "OpenAI Five is well-known for its model-free RL approach in playing Dota 2.",
         "quote": "... playing complex games at a human or super-human level, such as OpenAI Five ..."
       },
-      "mode": "N/A"
+      "mode": ""
     },
     {
       "name": {
