@@ -10,7 +10,7 @@ from openai.types.chat.chat_completion import CompletionUsage
 import pydantic_core
 
 from . import ROOT_DIR
-from .model import _FIRST_MESSAGE, _RETRY_MESSAGE, ExtractionResponse, PaperExtractions
+from .models.model import _FIRST_MESSAGE, _RETRY_MESSAGE, ExtractionResponse, PaperExtractions
 from .utils import build_validation_set
 
 

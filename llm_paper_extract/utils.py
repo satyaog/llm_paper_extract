@@ -9,7 +9,7 @@ import warnings
 import pandas as pd
 from pydantic import BaseModel, Field, create_model
 
-from .model import Explained, Model, PaperExtractions
+from .models.model import Explained, Model, PaperExtractions
 
 PAPERS_TO_IGNORE={"data/cache/arxiv/2404.09932.txt",}
 
@@ -191,11 +191,15 @@ def model2df(model:BaseModel):
 
         elif k in ("research_field", "sub_research_field",):
             v, *extra = [_.strip().rstrip("]") for _ in v.split("[[")]
+            # print(v, extra)
             assert len(extra) <= 1
+            # if extra:
+            #     import ipdb ; ipdb.set_trace()
             extra = [_.strip() for _ in extra for _ in _.split(",")]
             v = [v, *extra]
             v = map(str_normalize, v)
             v = sorted(set(map(_reasearch_field_alias, v)))
+            # print(v)
 
         if k in ("title", "type", "research_field",):
             paper_1d_df[k] = v
@@ -234,6 +238,7 @@ def model2df(model:BaseModel):
         pd.DataFrame(paper_references_df)
     )
 
+    # import ipdb ; ipdb.set_trace()
     for group in ("models", "datasets", "libraries",):
         try:
             _l = paper_references_df.loc[group]["name"]
@@ -263,9 +268,12 @@ def print_model(model_cls:BaseModel, indent = 0):
 
 def str_normalize(string):
     string = unicodedata.normalize("NFKC", string).lower()
+    # if "{{" in string:
+    #     import ipdb ; ipdb.set_trace()
     string = [_s.split("}}") for _s in string.split("{{")]
     string = sum(string, [])
     exclude = string[1:2]
+    # import ipdb ; ipdb.set_trace()
     string = list(map(
         lambda _s:re.sub(pattern=r"[^a-z0-9]", string=_s, repl=""),
         string[:1] + string[2:]

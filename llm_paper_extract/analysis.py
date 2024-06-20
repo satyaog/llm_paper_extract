@@ -21,7 +21,7 @@ import pandas as pd
 from sklearn.metrics import confusion_matrix
 
 from . import ROOT_DIR
-from .model import ExtractionResponse, PaperExtractions
+from .models.model import ExtractionResponse, PaperExtractions
 from .utils import build_validation_set, model2df
 
 
@@ -91,6 +91,8 @@ if __name__ == "__main__":
         annotated[0].append(paper_attr)
         annotated[1].append(paper_refs)
 
+        # if f.stem == "2401.14487":
+        #     import ipdb ; ipdb.set_trace()
         queries_dir = (ROOT_DIR / "data/queries/")
         for i, query_f in enumerate(sorted(queries_dir.glob(f.with_stem(f"{f.stem}*").name))):
             print(f"Fetching data from {query_f}", file=sys.stderr)
@@ -104,6 +106,8 @@ if __name__ == "__main__":
             predictions[0].append(paper_attr)
             predictions[1].append(paper_refs)
 
+    # import ipdb ; ipdb.set_trace()
+
     annotated[0] = pd.concat(annotated[0])
     annotated[1] = pd.concat(annotated[1])
 
@@ -114,6 +118,8 @@ if __name__ == "__main__":
     _analysis_dir.mkdir(parents=True, exist_ok=True)
 
     max_attempt = max(predictions[0].reset_index([0,],drop=True).index)
+
+    # import ipdb ; ipdb.set_trace()
 
     for label in ("title", "type", "research_field"):
         for i in range(max_attempt + 1):
@@ -147,6 +153,8 @@ if __name__ == "__main__":
             print("Normalized confusion Matrix (%):")
             print(normal_conf_mat)
 
+    # import ipdb ; ipdb.set_trace()
+
     for group in ("models", "datasets", "libraries",):
         for i in range(max_attempt + 1):
             ann, pred = (
@@ -177,6 +185,8 @@ if __name__ == "__main__":
                 pd.DataFrame(conf_mat, index=[*names, ""], columns=[*names, ""]).to_csv()
             )
 
+            # import ipdb ; ipdb.set_trace()
+
             print(f"{group}.{col}:")
             print("Raw confusion Matrix:")
             print(conf_mat)
@@ -186,10 +196,14 @@ if __name__ == "__main__":
             ann_matches = []
             pred_matches = []
 
+            # import ipdb ; ipdb.set_trace()
+
             for ann_items, pred_items in zip(ann_per_paper, pred_per_paper):
                 for _, row in ann_items.iterrows():
                     pred_match = pred_items[pred_items["name"] == row["name"]]
                     if not pred_match.empty:
+                        if len(pred_match) > 1:
+                            import ipdb ; ipdb.set_trace()
                         assert len(pred_match) == 1, (
                             f"Too many matches for\n{row['name']}\nin\n{pred_items}"
                         )
@@ -204,6 +218,8 @@ if __name__ == "__main__":
 
             for col in ann.columns:
                 if col in ("role", "mode",):
+                    # import ipdb ; ipdb.set_trace()
+
                     (conf_mat, normal_conf_mat), classes = _mlcm(
                         [ann_matches.loc[idx:idx,col] for idx in ann_matches.index],
                         [pred_matches.loc[idx:idx,col] for idx in pred_matches.index],
