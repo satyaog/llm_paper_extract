@@ -1,0 +1,116 @@
+title:
+  value: A Reduction from Reinforcement Learning to No-Regret Online Learning
+  justification: It is the title provided by the source document.
+  quote: A Reduction from Reinforcement Learning to No-Regret Online Learning
+description: 'The paper presents a reduction methodology from reinforcement learning (RL) to no-regret online learning using
+  the saddle-point formulation of RL. This approach decomposes the RL problem into two parts: regret minimization and function
+  approximation. By applying this reduction, new RL algorithms can be systematically designed. The paper also proposes an
+  RL algorithm based on mirror descent and the generative-model oracle, providing provable performance guarantees.'
+type:
+  value: Empirical Study
+  justification: The paper proposes a new algorithm for RL and demonstrates its performance through empirical evaluation.
+  quote: We demonstrate this idea by devising a simple RL algorithm based on mirror descent and the generative-model oracle.
+primary_research_field:
+  name:
+    value: Reinforcement Learning Reduction
+    justification: The paper's focus is on devising reduction for reinforcement learning.
+    quote: We present a reduction from reinforcement learning (RL) to no-regret online learning based on the saddle-point
+      formulation of RL
+  aliases: []
+sub_research_fields:
+- name:
+    value: Reinforcement Learning
+    justification: The main theme of the paper is to reduce reinforcement learning problems to no-regret online learning and  to
+      design new RL algorithms.
+    quote: We present a reduction from reinforcement learning (RL) to no-regret online learning based on the saddle-point
+      formulation  of RL.
+  aliases:
+  - RL
+- name:
+    value: No-Regret Online Learning
+    justification: The main theme of the paper is to reduce reinforcement learning problems to no-regret online learning and  to
+      design new RL algorithms.
+    quote: We present a reduction from reinforcement learning (RL) to no-regret online learning based on the saddle-point
+      formulation  of RL.
+  aliases: []
+- name:
+    value: Saddle-point problem
+    justification: The reflection is based on the saddle-point problem of the LP
+    quote: In this work, we revisit the classic linear-program (LP) formulation of RL [1, 2] in an attempt to tackle this  long-standing
+      question. We focus on the associated saddle-point problem of the LP (given by Lagrange duality).
+  aliases: []
+- name:
+    value: Linear Programming
+    justification: The reflection is based on the saddle-point problem of the linear-program.
+    quote: In this work, we revisit the classic linear-program (LP) formulation of RL
+  aliases:
+  - LP
+models:
+- name:
+    value: mirror descent algorithm
+    justification: The paper proposes and evaluates a simple RL algorithm based on mirror descent.
+    quote: 'As a demonstration, we design an RL algorithm based on arguably the simplest online learning algorithm: mirror
+      descent.'
+  aliases: []
+  is_contributed:
+    value: true
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: contributed
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: trained
+  is_compared:
+    value: true
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: mirror-prox
+    justification: Mirror-prox is mentioned as a potential optimization algorithm.
+    quote: "one can further foresee that algorithms leveraging the continuity in COL\u2014e.g. mirror-prox [25] or PicCoLO\
+      \ [18]\u2014and variance reduction can lead to more sample efficient RL algorithms."
+  aliases: []
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: referenced
+  is_executed:
+    value: false
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: inference
+  is_compared:
+    value: false
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: PicCoLO
+    justification: PicCoLO is mentioned as a potential optimization algorithm.
+    quote: "one can further foresee that algorithms leveraging the continuity in COL\u2014e.g. mirror-prox [25] or PicCoLO\
+      \ [18]\u2014and variance reduction can lead to more sample efficient RL algorithms."
+  aliases: []
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: referenced
+  is_executed:
+    value: false
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: inference
+  is_compared:
+    value: false
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+datasets: []
+libraries: []
