@@ -1,0 +1,58 @@
+title:
+  value: Bug Characterization in Machine Learning-based Systems
+  justification: '"Bug Characterization in Machine Learning-based Systems" is the title of the paper as stated at the beginning.'
+  quote: Bug Characterization in Machine Learning-based Systems
+description: The paper investigates the characteristics of bugs in ML-based software systems, comparing ML and non-ML bugs
+  from the software maintenance viewpoint. The study involves a manual inspection of issues from GitHub repositories that
+  use TensorFlow, PyTorch, and Keras, aiming to identify patterns and suggest areas for improvement in maintenance practices
+  and tool support.
+type:
+  value: Theoretical
+  justification: It is a software engineering study, not involving training of any model.
+  quote: ''
+primary_research_field:
+  name:
+    value: Software engineering
+    justification: ''
+    quote: ''
+  aliases: []
+sub_research_fields:
+- name:
+    value: Software Maintenance
+    justification: The study specifically aims to understand the characteristics of bugs in ML-based systems from the software
+      maintenance perspective.
+    quote: '...it is necessary to investigate the usage of ML components, from the software maintenance perspective.'
+  aliases: []
+models: []
+datasets: []
+libraries:
+- name:
+    value: Keras
+    justification: Keras is one of the three popular ML frameworks exclusively mentioned as part of the study.
+    quote: '...used one of the three most popular ML frameworks, i.e., TensorFlow, Keras, and PyTorch'
+  aliases: []
+  role: used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: PyTorch
+    justification: PyTorch is one of the three popular ML frameworks exclusively mentioned as part of the study.
+    quote: '...used one of the three most popular ML frameworks, i.e., TensorFlow, Keras, and PyTorch'
+  aliases: []
+  role: used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: TensorFlow
+    justification: TensorFlow is one of the three popular ML frameworks exclusively mentioned as part of the study.
+    quote: '...used one of the three most popular ML frameworks, i.e., TensorFlow, Keras, and PyTorch'
+  aliases: []
+  role: used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''

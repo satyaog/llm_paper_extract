@@ -1,0 +1,207 @@
+title:
+  value: Ant Colony Sampling with GFlowNets for Combinatorial Optimization
+  justification: The title directly reflects the critical methodologies (Ant Colony Sampling and GFlowNets) used for addressing
+    combinatorial optimization.
+  quote: Ant Colony Sampling with GFlowNets for Combinatorial Optimization
+description: This paper introduces the Generative Flow Ant Colony Sampler (GFACS), a novel neural-guided meta-heuristic algorithm
+  for combinatorial optimization. GFACS integrates Generative Flow Networks (GFlowNets) with the Ant Colony Optimization (ACO)
+  methodology to enhance ACO by providing an informed prior distribution of decision variables. The paper demonstrates that
+  GFACS outperforms baseline ACO algorithms in various combinatorial optimization tasks and is competitive with problem-specific
+  heuristics for vehicle routing problems.
+type:
+  value: Empirical Study
+  justification: The study includes experimental results that demonstrate the performance of GFACS compared to baseline ACO
+    algorithms and other heuristics, indicating an empirical approach.
+  quote: Our experimental results demonstrate that GFACS outperforms baseline ACO algorithms in seven CO tasks and is competitive
+    with problem-specific heuristics for vehicle routing problems.
+primary_research_field:
+  name:
+    value: Combinatorial Optimization
+    justification: ''
+    quote: ''
+  aliases: []
+sub_research_fields:
+- name:
+    value: Neural-Guided Meta-Heuristic Algorithms
+    justification: The paper focuses on the development and application of neural-guided algorithms (specifically GFACS) within
+      the context of combinatorial optimization, fitting within meta-heuristic approaches guided by neural networks.
+    quote: GFACS, a novel neural-guided meta-heuristic algorithm for combinatorial optimization.
+  aliases: []
+- name:
+    value: Ant Colony Optimization
+    justification: ''
+    quote: ''
+  aliases:
+  - ACO
+models:
+- name:
+    value: ACO
+    justification: ''
+    quote: ''
+  aliases:
+  - Ant Colony Optimization
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: ''
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: ''
+  is_compared:
+    value: true
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: DeepACO
+    justification: DeepACO is a referenced model against which GFACS's performance is compared through experimental results.
+    quote: Recently, a neural-guided Ant Colony Optimization (ACO) method, DeepACO, was introduced by Ye et al. (2023).
+  aliases: []
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: referenced
+  is_executed:
+    value: false
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: trained
+  is_compared:
+    value: false
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: 'DeepACO: Neural-enhanced ant systems for combinatorial optimization'
+    justification: ''
+    quote: ''
+- name:
+    value: GFACS
+    justification: GFACS is the primary model introduced and evaluated in this study, aiming to improve combinatorial optimization
+      tasks.
+    quote: This paper introduces the Generative Flow Ant Colony Sampler (GFACS), a novel neural-guided meta-heuristic algorithm
+      for combinatorial optimization.
+  aliases: []
+  is_contributed:
+    value: true
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: contributed
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: trained
+  is_compared:
+    value: true
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: GFlowNet
+    justification: GFlowNets are a central component of the proposed GFACS algorithm, responsible for learning a constructive
+      policy in combinatorial spaces.
+    quote: GFlowNets, a generative model that learns a constructive policy in combinatorial spaces
+  aliases: []
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: used
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: trained
+  is_compared:
+    value: true
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+datasets:
+- name:
+    value: TSPLIB
+    justification: TSPLIB is mentioned as a real-world benchmark dataset used to evaluate the performance of the proposed
+      algorithm on the TSP.
+    quote: This section presents a comparison of performance between the baseline models and our model on real-world Traveling
+      Salesman Problem (TSP) instances. We evaluated the models on TSP200, TSP500, and TSP1000 under their respective conditions.
+  aliases:
+  - TSP
+  - Traveling Salesman Problem
+  role: used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: CVRPLib-X
+    justification: ''
+    quote: ''
+  aliases:
+  - CVRP
+  - Capacitated Vehicle Routing Problem
+  role: used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: CVRPTM
+    justification: ''
+    quote: ''
+  aliases:
+  - CVRP with Time Window
+  role: used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: PCTSP
+    justification: ''
+    quote: ''
+  aliases:
+  - Prize-Collecting Vehicle Routing Problem
+  role: used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: OP
+    justification: ''
+    quote: ''
+  aliases:
+  - Orienteering Problem
+  role: used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: SMTWTP
+    justification: ''
+    quote: ''
+  aliases:
+  - Single Machine Total Weighted Tardiness Problem
+  role: used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: BPP
+    justification: ''
+    quote: ''
+  aliases:
+  - Bin Packing Problem
+  role: used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+libraries: []

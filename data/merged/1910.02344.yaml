@@ -1,0 +1,186 @@
+title:
+  value: Neural Multisensory Scene Inference
+  justification: The title is clearly indicated at the top of the provided research paper.
+  quote: Neural Multisensory Scene Inference
+description: This paper introduces the Generative Multisensory Network (GMN) for learning latent representations of 3D scenes
+  from multiple sensory modalities. It proposes the Amortized Product-of-Experts (APoE) to improve computational efficiency
+  and robustness to unseen modality combinations. The paper demonstrates the effectiveness of GMN in inferring robust 3D scene
+  representations and performing accurate cross-modal generation using a newly developed environment, the Multisensory Embodied
+  3D-Scene Environment (MESE).
+type:
+  value: Empirical
+  justification: The paper focuses on introducing a new model (GMN), a novel method (APoE), and demonstrating their effectiveness
+    through experimental results.
+  quote: Experimental results demonstrate that the proposed model can efficiently infer robust modality-invariant 3D-scene
+    representations from arbitrary combinations of modalities and perform accurate cross-modal generation.
+primary_research_field:
+  name:
+    value: Scene Inference
+    justification: ''
+    quote: ''
+  aliases: []
+sub_research_fields:
+- name:
+    value: Multimodal Learning
+    justification: The paper specifically focuses on learning representations from multiple sensory modalities.
+    quote: Motivated by human multisensory processing, we propose the Generative Multisensory Network (GMN) for learning latent
+      representations of 3D scenes which are partially observable through multiple sensory modalities.
+  aliases: []
+- name:
+    value: Computer Vision
+    justification: ''
+    quote: ''
+  aliases: []
+- name:
+    value: 3D Scene
+    justification: ''
+    quote: ''
+  aliases: []
+models:
+- name:
+    value: Amortized Product-of-Experts
+    justification: The APoE method is introduced as a novel component within the GMN to enhance its efficiency and robustness.
+    quote: We also introduce the Amortized Product-of-Experts network that allows for generalized cross-modal generation while
+      resolving the problems in the Generative Query Network (GQN) and traditional Product-of-Experts.
+  aliases:
+  - APoE
+  is_contributed:
+    value: true
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: contributed
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: trained
+  is_compared:
+    value: true
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: Consistent Generative Query Network
+    justification: The paper references C-GQN as a base model which GMN builds upon.
+    quote: We adopt C-GQN network architecture from Kumar et al. (2018) for the proposed model, as well as the baseline.
+  aliases:
+  - C-GQN
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: referenced
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: referenced
+  is_compared:
+    value: true
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: Generative Multisensory Network
+    justification: The main model introduced and developed in the paper is the GMN.
+    quote: We propose the Generative Multisensory Network (GMN) for learning latent representations of 3D scenes which are
+      partially observable through multiple sensory modalities.
+  aliases:
+  - GMN
+  is_contributed:
+    value: true
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: contributed
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: trained
+  is_compared:
+    value: true
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: Product-of-Experts
+    justification: The PoE model is referenced in comparison to and as a precursor for the APoE introduced in the paper.
+    quote: As a result, the Amortized Product-of-Experts (APoE) allows the model to learn from a large number of modalities
+      without tight coupling among the modalities.
+  aliases:
+  - PoE
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: referenced
+  is_executed:
+    value: false
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: referenced
+  is_compared:
+    value: false
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: ConvDraw network
+    justification: ''
+    quote: ''
+  aliases: []
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: referenced
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: referenced
+  is_compared:
+    value: true
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+datasets:
+- name:
+    value: MultiSensory Embodied 3D-Scene Environment
+    justification: MESE is a dataset created and used in this paper to test the performance of GMN and APoE models.
+    quote: To perform this exploration, we also develop the Multisensory Embodied 3D-Scene Environment (MESE).
+  aliases:
+  - MESE
+  role: Contributed
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: Shepard-Metzler Dataset
+    justification: The Shepard-Metzler Dataset is used in the environment for training and evaluating the proposed models.
+    quote: Our main task is similar to the Shepard-Metzler object experiments used in Eslami et al. (2018) but extends it
+      with the MPL hand.
+  aliases: []
+  role: referenced
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+libraries:
+- name:
+    value: PyTorch
+    justification: PyTorch is one of the primary deep learning libraries used for implementing and training the models in
+      this paper.
+    quote: 'Code is available at: https://github.com/lim0606/pytorch-generative-multisensory-network'
+  aliases: []
+  role: Used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''

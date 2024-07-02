@@ -1,0 +1,133 @@
+title:
+  value: Substituting Data Annotation with Balanced Updates and Collective Loss in Multi-Label Text Classification
+  justification: The title is explicitly stated on the first page of the paper.
+  quote: Substituting Data Annotation with Balanced Updates and Collective Loss in Multi-Label Text Classification
+description: The paper presents a framework, Balanced Neighbourhoods and Collective Loss (BNCL), for multi-label text classification
+  (MLTC) in settings with either no annotations or limited annotations. The approach maps input text to label likelihoods
+  using a pre-trained language model, updates these likelihoods based on a label dependency graph, and applies collective
+  loss to refine predictions.
+type:
+  value: empirical study
+  justification: The paper involves conducting multiple experiments to demonstrate the effectiveness of the proposed BNCL
+    framework across different datasets and comparing it against several baseline methods.
+  quote: The experiments show that the proposed framework achieves effective performance under low supervision settings
+primary_research_field:
+  name:
+    value: multi-label text classification
+    justification: ''
+    quote: ''
+  aliases: []
+sub_research_fields:
+- name:
+    value: Natural Language Processing
+    justification: The core of the research focuses on natural language inference and multi-label text classification, which
+      are subfields of Natural Language Processing (NLP).
+    quote: Multi-label text classification (MLTC) is the task of selecting the correct subset of labels for each text sample
+      in a corpus.
+  aliases: []
+- name:
+    value: Weakly annotated data
+    justification: ''
+    quote: ''
+  aliases: []
+models:
+- name:
+    value: BART
+    justification: The paper uses BART as the pre-trained language model for mapping input text into preliminary label predictions.
+    quote: We transform the input using the pre-trained model BART (Lewis et al., 2020) and its corresponding tokenizer
+  aliases: []
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: used
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: inference
+  is_compared:
+    value: true
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: BERT
+    justification: BERT is referenced as a comparative model for weakly supervised single-label text classification.
+    quote: Meng et al. (2020) use a pre-trained language model, BERT (Devlin et al., 2019), to generate a list of alternative
+      words for each label.
+  aliases: []
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: referenced
+  is_executed:
+    value: false
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: inference
+  is_compared:
+    value: false
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: Graph Convolutional Network
+    justification: GCN is used in related works for encoding hierarchical label structures in multi-label classification.
+    quote: Rios & Kavuluru (2018) use label descriptions to generate a feature vector for each label and employ a two layer
+      graph convolutional network (GCN)
+  aliases:
+  - GCN
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: referenced
+  is_executed:
+    value: false
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: training
+  is_compared:
+    value: false
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+datasets:
+- name:
+    value: Reuters-21578
+    justification: The dataset is used in the experiments to demonstrate the effectiveness of the BNCL framework.
+    quote: 'Datasets. For our experiments we use two multi-label text classification datasets: Reuters215781'
+  aliases: []
+  role: used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: StackEx-Philosophy
+    justification: The dataset is used in the experiments to demonstrate the effectiveness of the BNCL framework.
+    quote: 'Datasets. For our experiments we use two multi-label text classification datasets: ... StackEx-Philosophy'
+  aliases: []
+  role: used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+libraries:
+- name:
+    value: scikit-learn
+    justification: The paper references the libraries for the implementation of supervised baseline methods for multi-label
+      classification.
+    quote: The results for ML-KNN and ML-ARAM are obtained by implementations provided in the scikit-learn library (Pedregosa
+      et al., 2011).
+  aliases: []
+  role: used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''

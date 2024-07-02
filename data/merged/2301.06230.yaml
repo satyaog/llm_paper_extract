@@ -1,0 +1,197 @@
+title:
+  value: 'Swarm-SLAM: Sparse Decentralized Collaborative Simultaneous Localization and Mapping Framework for Multi-Robot Systems'
+  justification: The title is stated at the beginning of the paper and matches the content described.
+  quote: 'Swarm-SLAM: Sparse Decentralized Collaborative Simultaneous Localization and Mapping Framework for Multi-Robot Systems'
+description: The paper introduces Swarm-SLAM, a decentralized, flexible, and scalable Collaborative Simultaneous Localization
+  And Mapping (C-SLAM) system designed for multi-robot systems. The system supports various sensors and includes a novel inter-robot
+  loop closure prioritization technique to enhance communication efficiency and reduce resource usage.
+type:
+  value: Empirical study
+  justification: The paper evaluates the Swarm-SLAM system on multiple datasets and conducts real-world experiments, indicating
+    it is an empirical study.
+  quote: We evaluated our ROS 2 implementation on five different datasets, and in a real-world experiment with three robots
+    communicating through an ad-hoc network.
+primary_research_field:
+  name:
+    value: Robotics
+    justification: The study focuses on a framework for multi-robot systems and Collaborative SLAM, which are central topics
+      in robotics.
+    quote: Collaborative Simultaneous Localization And Mapping (C-SLAM) is a vital component for successful multi-robot operations
+      in environments without an external positioning system.
+  aliases: []
+sub_research_fields:
+- name:
+    value: Collaborative Perception and Mapping
+    justification: The paper focuses on Collaborative SLAM, which is a combination of perception and mapping techniques used
+      in multi-robot systems.
+    quote: In this paper, we introduce Swarm-SLAM, an open-source C-SLAM system that is designed to be scalable, flexible,
+      decentralized, and sparse, which are all key properties in swarm robotics.
+  aliases: []
+- name:
+    value: Collaborative SLAM
+    justification: The paper specifically deals with Collaborative Simultaneous Localization And Mapping (C-SLAM) for multi-robot
+      systems.
+    quote: In this paper, we introduce Swarm-SLAM, an open-source C-SLAM system that is designed to be scalable, flexible,
+      decentralized, and sparse, which are all key properties in swarm robotics.
+  aliases: []
+models:
+- name:
+    value: Distributed Graduated Non-Convexity
+    justification: The model is mentioned as a comparison for distributed optimization techniques in C-SLAM.
+    quote: In Table II, we present the estimates computed in the back-end on all the sequences for which GPS latitude and
+      longitude data is available as ground truth. Using our same front-end, we compared our GNC-based decentralized back-end
+      against two state-of-the-art distributed approaches...and a distributed implementation of Graduated Non-Convexity (D-GNC)
+      [16] based on the RCBD solver.
+  aliases:
+  - D-GNC
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: referenced
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: Inference
+  is_compared:
+    value: true
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: Distributed Gauss-Seidel
+    justification: The model is mentioned in the context of being an alternative method for optimization in C-SLAM systems.
+    quote: 'In Table II, we present the estimates computed in the back-end on all the sequences for which GPS latitude and
+      longitude data is available as ground truth. Using our same front-end, we compared our GNC-based decentralized back-end
+      against two state-of-the-art distributed approaches: the Distributed Gauss-Seidel (DGS) pose graph optimization [10]
+      combined with Pairwise Consistency Maximization (PCM) for outlier rejection as used in [7]'
+  aliases:
+  - DGS
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: referenced
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: Inference
+  is_compared:
+    value: true
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: Graduated Non-Convexity
+    justification: The model is mentioned as being used for pose graph optimization in Swarm-SLAM.
+    quote: Swarm-SLAM performs the pose graph optimization using the Graduated Non-Convexity [15] solver, with the robust
+      Truncated Least Square loss.
+  aliases:
+  - GNC
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: used
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: Inference
+  is_compared:
+    value: true
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: Slow-SLAM
+    justification: ''
+    quote: ''
+  aliases: []
+  is_contributed:
+    value: true
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: used
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: Inference
+  is_compared:
+    value: true
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+datasets:
+- name:
+    value: GrAco
+    justification: The paper specifically mentions the GrAco dataset as one of the used datasets.
+    quote: Third, we experimented on the first three overlapping lidar sequences of the very recent GrAco dataset [29] acquired
+      with custom ground robots on a college campus.
+  aliases: []
+  role: used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: KITTI 00
+    justification: The paper specifically mentions KITTI 00 as one of the datasets used for evaluation.
+    quote: First, we tested on the widely known autonomous driving KITTI 00 stereo sequence [27] which we split into two parts
+      to simulate a two-robots exploration.
+  aliases: []
+  role: used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: KITTI-360 09
+    justification: The paper specifically mentions KITTI-360 09 as one of the datasets used for evaluation.
+    quote: "Second, we split the very large (\u223C10km) KITTI360 09 lidar sequence [28] into 5 parts that contain a large\
+      \ number of loop closures, making it particularly well suited for inter-robot loop closure detection analysis."
+  aliases: []
+  role: used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: M2DGR
+    justification: The M2DGR dataset is mentioned as an experimental dataset to test the proposed system.
+    quote: Fourth, we evaluate our system on the three lidar Gate sequences of the M2DGR dataset [30].
+  aliases: []
+  role: used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: S3E
+    justification: The S3E dataset is mentioned as an experimental dataset to test the proposed system.
+    quote: Fifth, we tested on three sequences of the recent C-SLAM-focused S3E dataset [31].
+  aliases: []
+  role: used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+libraries:
+- name:
+    value: ROS 2
+    justification: The ROS 2 framework is mentioned as the implementation framework for the proposed system.
+    quote: We evaluated our ROS 2 implementation on five different datasets, and in a real-world experiment with three robots
+      communicating through an ad-hoc network.
+  aliases: []
+  role: used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''

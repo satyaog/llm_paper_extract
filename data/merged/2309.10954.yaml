@@ -1,0 +1,272 @@
+title:
+  value: In-Context Learning for Text Classification with Many Labels
+  justification: The title clearly reflects the content and focus of the paper, which is on leveraging in-context learning
+    for text classification tasks involving numerous labels.
+  quote: In-Context Learning for Text Classification with Many Labels
+description: The paper studies in-context learning (ICL) using large language models (LLMs) for tasks with many labels, addressing
+  the challenge posed by the limited context window of these models. It proposes a method to overcome this limitation by using
+  a pre-trained dense retrieval model to provide the model with a partial view of the full label space for each inference
+  call. The method is evaluated on multiple datasets, showing state-of-the-art performance in certain settings without finetuning.
+type:
+  value: empirical
+  justification: The study involves empirical evaluation of methods using experiments on multiple datasets and models to demonstrate
+    performance outcomes.
+  quote: By testing on intent classification (upwards of 50 classes) and fine-grained sentiment analysis (upwards of 25 classes),
+    we demonstrate that the resulting performance with this method can reach SoTA.
+primary_research_field:
+  name:
+    value: In-Context Learning
+    justification: ''
+    quote: In-context learning (ICL) using large language models (LLMs) has recently exploded in popularity.
+  aliases: []
+sub_research_fields:
+- name:
+    value: Natural Language Processing
+    justification: The study specifically focuses on text classification tasks, which is a key area within NLP.
+    quote: 'We evaluate LLMs in this setting with three intent classification datasets: BANKING77, HWU64, and CLINC150, as
+      well as one fine-grained sentiment classification dataset: GoEmotions.'
+  aliases:
+  - NLP
+- name:
+    value: Text Classification
+    justification: The study specifically targets text classification tasks, including intent classification and fine-grained
+      sentiment analysis.
+    quote: In this work, we study whether ICL can handle challenging classification tasks with many possible labels.
+  aliases: []
+models:
+- name:
+    value: DeBERTa-v2-XXLarge
+    justification: The paper compares the performance of their method with the DeBERTa-v2-XXLarge model.
+    quote: We compare the performance achieved against adapter-based fine-tuning of MLM models (DeBERTa-v2-XXLarge with the
+      'Pfeiffer' bottleneck-style adapter...).
+  aliases:
+  - DeBERTa
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: referenced
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: inference
+  is_compared:
+    value: true
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: ConvFit
+    justification: ''
+    quote: The ConvFit baseline is taken from the reported numbers in the ConvFit paper directly.
+  aliases: []
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: ''
+  is_executed:
+    value: false
+    justification: modelMode:['trained', 'fine-tuned', 'inference']
+    quote: ''
+  is_compared:
+    value: true
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: SetFit
+    justification: ''
+    quote: ''
+  aliases: []
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: ''
+  is_executed:
+    value: true
+    justification: modelMode:['trained', 'fine-tuned', 'inference']
+    quote: ''
+  is_compared:
+    value: true
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: LLaMA
+    justification: The paper mentions testing with LLaMA models to achieve state-of-the-art performance in few-shot settings.
+    quote: Testing with recent open-source LLMs (OPT, LLaMA), we set new state of the art performance in few-shot settings.
+  aliases:
+  - LLaMA 7B
+  - LLaMA 70B
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: used
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: inference
+  is_compared:
+    value: true
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: LLaMA 2
+    justification: The paper mentions testing with LLaMA models to achieve state-of-the-art performance in few-shot settings.
+    quote: Testing with recent open-source LLMs (OPT, LLaMA), we set new state of the art performance in few-shot settings.
+  aliases:
+  - LLaMA 2 7B
+  - LLaMA 2 7B 4k
+  - LLaMA 2 70B
+  - LLaMA 2 70B 4k
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: used
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: inference
+  is_compared:
+    value: true
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: OPT
+    justification: The paper mentions testing with OPT models to achieve state-of-the-art performance in few-shot settings.
+    quote: Testing with recent open-source LLMs (OPT, LLaMA), we set new state of the art performance in few-shot settings.
+  aliases:
+  - OPT 13B
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: used
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: inference
+  is_compared:
+    value: true
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: SBERT
+    justification: The paper uses a pre-trained SBERT model as a retriever for in-context learning.
+    quote: By coupling the LLM with an external pre-trained dense retriever model (Reimers and Gurevych, 2019a; Karpukhin
+      et al., 2020), we can dynamically retrieve a set of examples to provide to the LM in-context.
+  aliases: []
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: used
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: inference
+  is_compared:
+    value: true
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+datasets:
+- name:
+    value: BANKING77
+    justification: BANKING77 is one of the intent classification datasets used for evaluation in the study.
+    quote: 'We evaluate LLMs in this setting with three intent classification datasets: BANKING77, HWU64, and CLINC150.'
+  aliases:
+  - BANKING
+  role: Used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: CLINC150
+    justification: CLINC150 is one of the intent classification datasets used for evaluation in the study.
+    quote: 'We evaluate LLMs in this setting with three intent classification datasets: BANKING77, HWU64, and CLINC150.'
+  aliases:
+  - CLINC
+  role: Used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: GoEmotions
+    justification: GoEmotions is a fine-grained sentiment classification dataset used for evaluation in the study.
+    quote: 'We evaluate LLMs in this setting with three intent classification datasets: BANKING77, HWU64, and CLINC150, as
+      well as one fine-grained sentiment classification dataset: GoEmotions.'
+  aliases: []
+  role: Used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: HWU64
+    justification: HWU64 is one of the intent classification datasets used for evaluation in the study.
+    quote: 'We evaluate LLMs in this setting with three intent classification datasets: BANKING77, HWU64, and CLINC150.'
+  aliases:
+  - HWU
+  role: Used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+libraries:
+- name:
+    value: AdapterHub
+    justification: AdapterHub is used to implement the bottleneck-style adapter for the DeBERTa-v2-XXLarge model.
+    quote: "DeBERTa-v2-XXLarge with the \u201CPfeiffer\u201D bottleneck-style adapter (Pfeiffer et al., 2020b) implemented\
+      \ with AdapterHub."
+  aliases: []
+  role: Used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: SentenceTransformers
+    justification: SentenceTransformers library is used to load the pre-trained retrieval model for the experiments.
+    quote: "Specific retrieval model: For our sentence encoder/retriever, we use the SentenceTransformers library (Reimers\
+      \ and Gurevych, 2019a), and use the pre-trained \u201Call-mpnet-base-v2\u201D model."
+  aliases: []
+  role: Used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: SetFit
+    justification: SetFit is another framework used for contrastive fine-tuning in the comparative experiments.
+    quote: The SetFit results are based on contrastively tuning the same pre-trained model trained by Microsoft through the
+      Setfit library.
+  aliases: []
+  role: Used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''

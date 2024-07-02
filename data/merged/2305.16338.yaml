@@ -1,0 +1,227 @@
+title:
+  value: 'Think Before You Act: Decision Transformers with Internal Working Memory'
+  justification: This value is the title of the paper as mentioned in the provided text.
+  quote: 'Think Before You Act: Decision Transformers with Internal Working Memory'
+description: The paper proposes a novel architecture, Decision Transformers with Memory (DT-Mem), which introduces an internal
+  working memory module to improve training efficiency and generalization for large language model-based decision-making agents.
+  The working memory module helps manage and organize multiple skills efficiently, mitigating the forgetting phenomenon. Evaluation
+  results demonstrate that DT-Mem improves performance in Atari games and Meta-World object manipulation tasks while reducing
+  the number of parameters and training time required.
+type:
+  value: empirical
+  justification: The paper proposes a new model (DT-Mem) and evaluates its performance experimentally on Atari games and Meta-World
+    environments, showing improved generalization and efficiency.
+  quote: Evaluation results show that the proposed method improves training efficiency and generalization in both Atari games
+    and meta-world object manipulation tasks.
+primary_research_field:
+  name:
+    value: Working Memory
+    justification: ''
+    quote: ''
+  aliases: []
+sub_research_fields:
+- name:
+    value: Reinforcement Learning
+    justification: The paper's proposed model, DT-Mem, is applied to reinforcement learning settings, including Atari games
+      and Meta-World environments, addressing issues specific to RL such as generalization and adaptability.
+    quote: Recently, with the tremendous success of large language model-based (LLM-based) foundation models [5, 27, 12, 33],
+      an increasing number of researchers have focused on LLM-based decision-making agents.
+  aliases: []
+models:
+- name:
+    value: DT-Mem
+    justification: The main contribution of the paper is the Decision Transformers with Memory (DT-Mem), which is introduced
+      as a new model to enhance training efficiency and generalization.
+    quote: Thus motivated, we propose Decision Transformers with Memory (DT-Mem).
+  aliases: []
+  is_contributed:
+    value: true
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: contributed
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: trained
+  is_compared:
+    value: true
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: GPT-3
+    justification: GPT-3 is used as a reference to highlight the generalization capabilities of large language models.
+    quote: As shown with GPT-3 [5] and follow-up work [21, 7], the generalization of these LLMs depends significantly on the
+      model size, i.e. the number of parameters.
+  aliases: []
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: referenced
+  is_executed:
+    value: false
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: inference
+  is_compared:
+    value: false
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: Hyper-Decision Transformer
+    justification: HDT is used as a reference model for comparison with the proposed DT-Mem model.
+    quote: Transformers are often pre-trained on large-scale datasets, as in the case of models like Multi-game DT [22] and
+      Hyper-DT [38], and this pre-training enables them to capture broad knowledge that is transferable across tasks.
+  aliases:
+  - HDT
+  - Hyper-DT
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: referenced
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: inference
+  is_compared:
+    value: true
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: Multi-game Decision Transformer
+    justification: MDT is used as a reference model for comparison with the proposed DT-Mem model.
+    quote: We fine-tune only the working memory in this work because we rely on the generalization capacity of a pre-trained
+      Decision Transformer (DT). Transformers are often pre-trained on large-scale datasets, as in the case of models like
+      Multi-game DT [22] and Hyper-DT [38].
+  aliases:
+  - MDT
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: referenced
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: inference
+  is_compared:
+    value: true
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: Recurrent Memory Decision Transformer
+    justification: ''
+    quote: ''
+  aliases:
+  - RMDT
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: referenced
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: inference
+  is_compared:
+    value: true
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: Prompt Decision Transformer
+    justification: ''
+    quote: ''
+  aliases:
+  - PDT
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: referenced
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: inference
+  is_compared:
+    value: true
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+datasets:
+- name:
+    value: Atari Games
+    justification: The paper evaluates DT-Mem using Atari games to demonstrate its improved training efficiency and generalization
+      capabilities.
+    quote: Evaluation results show that the proposed method improves training efficiency and generalization in both Atari
+      games and meta-world object manipulation tasks.
+  aliases: []
+  role: used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: Atari Game DQN Replay Dataset
+    justification: The dataset is mentioned in the evaluation section and used for training Decision Transformer models, including
+      DT-Mem.
+    quote: we used the same Atari dataset1 , which comprises multiple training runs of DQN trajectories.
+  aliases: []
+  role: used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: Meta-World
+    justification: The Meta-World environment is used to evaluate DT-Mem's performance in object manipulation tasks, showing
+      its adaptability and generalization.
+    quote: To validate our approach, we evaluate DT-Mem on Atari games, as used in Multi-game Decision Transformer (MDT) [22],
+      and Meta-World environments, as used in Prompt Decision Transformer (PDT) [37] and Hyper-Decision Transformer (HDT)
+      [38].
+  aliases: []
+  role: used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+libraries:
+- name:
+    value: GPT-2
+    justification: GPT-2 architecture is referenced in the design of the model's Transformer module.
+    quote: The Transformer module follows the architecture of GPT-2 [28], but without the feed-forward layer after attention
+      blocks.
+  aliases: []
+  role: referenced
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: LoRA
+    justification: The LoRA (Low-Rank Adaptation) method is used in conjunction with the memory module to modulate its output
+      and enhance adaptability to new tasks.
+    quote: "In particular, we use the low-rank adaptation (LoRA) [18] method in conjunction with a small set of adaptation\
+      \ parameters to modulate the memory module\u2019s output."
+  aliases: []
+  role: used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''

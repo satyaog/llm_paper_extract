@@ -1,0 +1,594 @@
+title:
+  value: Symmetry-Informed Geometric Representation for Molecules, Proteins, and Crystalline Materials
+  justification: The title is clearly stated at the beginning of the paper.
+  quote: Symmetry-Informed Geometric Representation for Molecules, Proteins, and Crystalline Materials
+description: This paper introduces Geom3D, a unified benchmarking platform for symmetry-informed geometric representation
+  models used in modeling molecules, proteins, and crystalline materials. Geom3D benchmarks 16 geometric models and 14 geometric
+  pretraining methods over 46 datasets across various scientific domains. The main contribution is providing a unified, symmetry-informed
+  geometric representation and extensive evaluation of various models and datasets.
+type:
+  value: Empirical study
+  justification: The paper aims to benchmark existing geometric models and provides a comprehensive evaluation of their performance
+    across multiple tasks and datasets, making it an empirical study.
+  quote: Nevertheless, pursuing geometric learning research is still challenging due to its evolving nature and the knowledge
+    gap between science (e.g., physics) and machine learning communities. These factors contribute to a substantial barrier
+    for machine learning researchers to investigate scientific problems and hinder efforts to reproduce results consistently.
+    To overcome this, we introduce Geom3D, a benchmarking of the geometric representation with four advantages, as follows.
+primary_research_field:
+  name:
+    value: Materials representation
+    justification: ''
+    quote: ''
+  aliases: []
+sub_research_fields:
+- name:
+    value: Geometric Representation Learning
+    justification: Focused on 3D geometric representation learning using symmetry-informed methods.
+    quote: the effectiveness of geometric strategies using 16 models and 14 pretraining methods on 46 datasets, covering small
+      molecules, proteins, and crystalline materials.
+  aliases: []
+- name:
+    value: Molecular and material modeling
+    justification: The paper specifically studies geometric representations of molecules, proteins, and crystalline materials,
+      making it a study in molecular and material modeling within the broader field of geometric deep learning.
+    quote: 'Geom3D benchmarks 16 geometric models on solving 46 scientific tasks, and these tasks include the three most fundamental
+      molecule types: small molecules, proteins, and crystalline materials.'
+  aliases: []
+models:
+- name:
+    value: 3D-EMGP
+    justification: The model was mentioned in the context of geometric pretraining.
+    quote: 3D-EMGP [56] has the same strategy and utilizes an equivariant module to denoise the 3D noise directly
+  aliases: []
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: used
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: pretraining
+  is_compared:
+    value: true
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: 3D InfoMax
+    justification: The model was mentioned in the context of geometric pretraining.
+    quote: GraphMVP, 3D InfoMax, MoleculeSDE
+  aliases: []
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: used
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: pretraining
+  is_compared:
+    value: true
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: Allegro
+    justification: Allegro is explicitly mentioned as one of the models benchmarked in the paper.
+    quote: 'Spherical Frame Basis Equivariant Model: TFN, SE(3)-Trans, SEGNN, NequIP, Allegro, Equiformer'
+  aliases: []
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: used
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: inference
+  is_compared:
+    value: true
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: AlphaFold2
+    justification: The model was mentioned in the context of geometric pretraining.
+    quote: protein folding (AlphaFold2 [62])
+  aliases: []
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: used
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: pretraining
+  is_compared:
+    value: false
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: ClofNet
+    justification: The model was mentioned in the context of geometric representation learning.
+    quote: ClofNet [19] for conformation generation.
+  aliases:
+  - Cofactor Binding Network
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: used
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: ''
+  is_compared:
+    value: false
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: DimeNet
+    justification: DimeNet is explicitly mentioned as one of the models benchmarked in the paper.
+    quote: 'Invariant Model: SchNet, DimeNet, SphereNet, GemNet'
+  aliases: []
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: used
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: inference
+  is_compared:
+    value: true
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: EGNN
+    justification: EGNN is explicitly mentioned as one of the models benchmarked in the paper.
+    quote: 'Vector Frame Basis Equivariant Model: EGNN, PaiNN, GVP'
+  aliases: []
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: used
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: inference
+  is_compared:
+    value: true
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: Equiformer
+    justification: Equiformer is explicitly mentioned as one of the models benchmarked in the paper.
+    quote: 'Spherical Frame Basis Equivariant Model: TFN, SE(3)-Trans, SEGNN, NequIP, Allegro, Equiformer'
+  aliases: []
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: used
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: inference
+  is_compared:
+    value: true
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: GemNet
+    justification: GemNet is explicitly mentioned as one of the models benchmarked in the paper.
+    quote: 'Invariant Model: SchNet, DimeNet, SphereNet, GemNet'
+  aliases: []
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: used
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: inference
+  is_compared:
+    value: true
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: GraphMVP
+    justification: The model was mentioned in the context of geometric pretraining.
+    quote: GraphMVP, 3D InfoMax, MoleculeSDE
+  aliases: []
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: used
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: pretraining
+  is_compared:
+    value: true
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: GVP
+    justification: GVP is explicitly mentioned as one of the models benchmarked in the paper.
+    quote: 'Vector Frame Basis Equivariant Model: EGNN, PaiNN, GVP'
+  aliases: []
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: used
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: inference
+  is_compared:
+    value: true
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: MoleculeSDE
+    justification: The model was mentioned in the context of geometric pretraining.
+    quote: GraphMVP, 3D InfoMax, MoleculeSDE
+  aliases: []
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: used
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: pretraining
+  is_compared:
+    value: true
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: NequIP
+    justification: NequIP is explicitly mentioned as one of the models benchmarked in the paper.
+    quote: 'Spherical Frame Basis Equivariant Model: TFN, SE(3)-Trans, SEGNN, NequIP, Allegro, Equiformer'
+  aliases: []
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: used
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: inference
+  is_compared:
+    value: true
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: PaiNN
+    justification: PaiNN is explicitly mentioned as one of the models benchmarked in the paper.
+    quote: 'Vector Frame Basis Equivariant Model: EGNN, PaiNN, GVP'
+  aliases: []
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: used
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: inference
+  is_compared:
+    value: true
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: SchNet
+    justification: SchNet is explicitly mentioned as one of the models benchmarked in the paper.
+    quote: 'Invariant Model: SchNet, DimeNet, SphereNet, GemNet'
+  aliases: []
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: used
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: inference
+  is_compared:
+    value: true
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: SE
+    justification: SE(3)-Trans is explicitly mentioned as one of the models benchmarked in the paper.
+    quote: 'Spherical Frame Basis Equivariant Model: TFN, SE(3)-Trans, SEGNN, NequIP, Allegro, Equiformer'
+  aliases:
+  - SE(3)-Trans
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: used
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: inference
+  is_compared:
+    value: true
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: SEGNN
+    justification: SEGNN is explicitly mentioned as one of the models benchmarked in the paper.
+    quote: 'Spherical Frame Basis Equivariant Model: TFN, SE(3)-Trans, SEGNN, NequIP, Allegro, Equiformer'
+  aliases: []
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: used
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: inference
+  is_compared:
+    value: true
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: SphereNet
+    justification: SphereNet is explicitly mentioned as one of the models benchmarked in the paper.
+    quote: 'Invariant Model: SchNet, DimeNet, SphereNet, GemNet'
+  aliases: []
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: used
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: inference
+  is_compared:
+    value: true
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: StructTrans
+    justification: The model was mentioned in the context of geometric pretraining.
+    quote: for protein design (StructTrans [51])
+  aliases: []
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: used
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: pretraining
+  is_compared:
+    value: false
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: TFN
+    justification: TFN is explicitly mentioned as one of the models benchmarked in the paper.
+    quote: 'Spherical Frame Basis Equivariant Model: TFN, SE(3)-Trans, SEGNN, NequIP, Allegro, Equiformer'
+  aliases:
+  - Tensor Field Network
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: used
+  is_executed:
+    value: false
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: inference
+  is_compared:
+    value: false
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+datasets:
+- name:
+    value: COLL
+    justification: COLL is explicitly mentioned as one of the datasets used in the paper.
+    quote: 'Small Molecules: QM9, MD17, rMD17, COLL'
+  aliases: []
+  role: used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: EC
+    justification: EC is explicitly mentioned as one of the datasets used in the paper.
+    quote: 'Proteins: EC, FOLD'
+  aliases: []
+  role: used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: FOLD
+    justification: FOLD is explicitly mentioned as one of the datasets used in the paper.
+    quote: 'Proteins: EC, FOLD'
+  aliases: []
+  role: used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: GEOM
+    justification: The dataset was mentioned in the pretraining context.
+    quote: 'Pretraining Dataset: GEOM Molecule3D PCQM4Mv2'
+  aliases: []
+  role: used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: MatBench
+    justification: MatBench is explicitly mentioned as one of the datasets used in the paper.
+    quote: 'Crystalline Materials: MatBench, QMOF'
+  aliases: []
+  role: used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: MD17
+    justification: MD17 is explicitly mentioned as one of the datasets used in the paper.
+    quote: 'Small Molecules: QM9, MD17, rMD17, COLL'
+  aliases: []
+  role: used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: Molecule3D
+    justification: The dataset was mentioned in the pretraining context.
+    quote: 'Pretraining Dataset: GEOM Molecule3D PCQM4Mv2'
+  aliases: []
+  role: used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: PCQM4Mv2
+    justification: The dataset was mentioned in the pretraining context.
+    quote: 'Pretraining Dataset: GEOM Molecule3D PCQM4Mv2'
+  aliases: []
+  role: used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: QM9
+    justification: QM9 is explicitly mentioned as one of the datasets used in the paper.
+    quote: 'Small Molecules: QM9, MD17, rMD17, COLL'
+  aliases: []
+  role: used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: QMOF
+    justification: QMOF is explicitly mentioned as one of the datasets used in the paper.
+    quote: 'Crystalline Materials: MatBench, QMOF'
+  aliases: []
+  role: used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: rMD17
+    justification: rMD17 is explicitly mentioned as one of the datasets used in the paper.
+    quote: 'Small Molecules: QM9, MD17, rMD17, COLL'
+  aliases: []
+  role: used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: Geom3D
+    justification: ''
+    quote: ''
+  aliases: []
+  role: contributed
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+libraries:
+- name:
+    value: PyTorch Geometric
+    justification: The paper mentions that Geom3D is based on PyTorch Geometric (PyG).
+    quote: In this work, we propose Geom3D, a geometric modeling framework based on PyTorch Geometric (PyG), one of the most
+      widely-used platforms for graph representation learning.
+  aliases:
+  - PyG
+  role: used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''

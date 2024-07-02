@@ -1,0 +1,134 @@
+title:
+  value: 'LitLLM: A Toolkit for Scientific Literature Review'
+  justification: The title is explicitly mentioned at the beginning of the paper.
+  quote: 'LitLLM: A Toolkit for Scientific Literature Review'
+description: The paper introduces LitLLM, a toolkit designed to assist researchers in conducting literature reviews using
+  Retrieval Augmented Generation (RAG) principles. The system leverages Large Language Models (LLMs) for summarizing abstracts,
+  retrieving and re-ranking relevant papers, and generating related work sections, aiming to reduce the time and effort required
+  for literature reviews.
+type:
+  value: empirical
+  justification: The paper presents a system, LitLLM, and provides implementation details, as well as user experiences and
+    usage studies, indicating its empirical nature.
+  quote: "As a preliminary study, we provided access to our user interface to 5 different researchers who worked through the\
+    \ demo to write literature reviews and validate the system\u2019s efficacy."
+primary_research_field:
+  name:
+    value: Literature Review
+    justification: The paper focuses on the use of LLMs and RAG techniques, which are core topics in the field of Natural
+      Language Processing.
+    quote: Following recent advances in large language models (LLMs), a new set of systems provides even more advanced features.
+  aliases: []
+sub_research_fields:
+- name:
+    value: Automated Literature Review
+    justification: The primary focus of the paper is on automating the literature review process using AI and NLP techniques.
+    quote: Conducting literature reviews for scientific papers is essential for understanding research, its limitations, and
+      building on existing work. It is a tedious task which makes an automatic literature review generator appealing.
+  aliases: []
+- name:
+    value: Scientific Literature Review
+    justification: The paper specifically addresses the task of conducting literature reviews using NLP techniques.
+    quote: LitLLM is an interactive tool to help scientists write the literature review or related work section of a scientific
+      paper starting from a user-provided abstract.
+  aliases: []
+- name:
+    value: Natural Language Processing
+    justification: ''
+    quote: ''
+  aliases:
+  - NLP
+- name:
+    value: Retrieval Augmented Generation
+    justification: ''
+    quote: ''
+  aliases:
+  - RAG
+models:
+- name:
+    value: GPT-3.5-turbo
+    justification: The paper mentions the use of GPT-3.5-turbo for generating results.
+    quote: In this work, we use OpenAI API to generate results for LLM using GPT-3.5-turbo and GPT-4 model.
+  aliases: []
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: used
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: inference
+  is_compared:
+    value: false
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: GPT-4
+    justification: The paper mentions the use of GPT-4 for generating results.
+    quote: In this work, we use OpenAI API to generate results for LLM using GPT-3.5-turbo and GPT-4 model.
+  aliases: []
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: used
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: inference
+  is_compared:
+    value: false
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+datasets: []
+libraries:
+- name:
+    value: Gradio
+    justification: The paper mentions using Gradio to build and showcase the LitLLM system, providing an interface for users.
+    quote: We build our system using Gradio (Abid et al., 2019), which provides a nice interface to quickly and efficiently
+      build system demos.
+  aliases: []
+  role: Used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: Huggingface
+    justification: The paper uses Huggingface space to host the LitLLM tool, making it accessible for users.
+    quote: Our open-source toolkit is accessible at https://github.com/ shubhamagarwal92/LitLLM and Huggingface space (https://huggingface.co/spaces/shubhamagarwal92/LitLLM)
+      with the video demo at https://youtu.be/E2ggOZBAFw0
+  aliases: []
+  role: Used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: OpenAI API
+    justification: The paper leverages the OpenAI API for utilizing LLMs like GPT-3.5-turbo and GPT-4 in the toolkit.
+    quote: In this work, we use OpenAI API8 to generate results for LLM using GPT-3.5-turbo and GPT-4 model.
+  aliases: []
+  role: Used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: Semantic Scholar API
+    justification: The paper retrieves relevant academic papers using the Semantic Scholar API to aid the literature review
+      process.
+    quote: In our toolkit, we retrieve relevant papers using the Semantic Scholar API.
+  aliases: []
+  role: Used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''

@@ -1,0 +1,80 @@
+title:
+  value: A Distributed Data-Parallel PyTorch Implementation of the Distributed Shampoo Optimizer for Training Neural Networks
+    At-Scale
+  justification: The title is taken directly from the paper, providing an accurate and concise description of the study.
+  quote: A Distributed Data-Parallel PyTorch Implementation of the Distributed Shampoo Optimizer for Training Neural Networks
+    At-Scale
+description: The paper describes a PyTorch implementation of the Distributed Shampoo algorithm for training neural networks
+  at scale. This implementation is optimized for homogeneous GPU architectures and enables efficient multi-GPU distributed
+  data-parallel training.
+type:
+  value: Empirical Study
+  justification: The paper includes empirical evaluations such as ablation studies and performance benchmarks on training
+    ImageNet with ResNet50.
+  quote: We validate our implementation by performing an ablation study on training ImageNet ResNet50
+primary_research_field:
+  name:
+    value: Distributed training
+    justification: ''
+    quote: ''
+  aliases: []
+sub_research_fields:
+- name:
+    value: Neural Network Optimization
+    justification: The main contribution of the paper is in the field of optimizing neural network training using the Distributed
+      Shampoo optimizer.
+    quote: The contribution of this paper is the description and design of a PyTorch implementation of the Distributed Shampoo
+      algorithm.
+  aliases: []
+- name:
+    value: Optimization Algorithms
+    justification: The paper extensively discusses the Distributed Shampoo optimizer, detailing its implementation and performance
+      enhancements for optimizing neural network training.
+    quote: The contribution of this paper is the description and design of a PyTorch implementation of the Distributed Shampoo
+      algorithm.
+  aliases: []
+models:
+- name:
+    value: ResNet50
+    justification: The ResNet50 model is used for evaluating the performance of the Distributed Shampoo implementation.
+    quote: We validate our implementation by performing an ablation study on training ImageNet ResNet50
+  aliases: []
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: Used
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: Training
+  is_compared:
+    value: true
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+datasets:
+- name:
+    value: ImageNet
+    justification: The ImageNet dataset is used for training the ResNet50 model to validate the Distributed Shampoo implementation.
+    quote: We validate our implementation by performing an ablation study on training ImageNet ResNet50
+  aliases: []
+  role: Used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+libraries:
+- name:
+    value: PyTorch
+    justification: The Distributed Shampoo implementation is specifically designed for the PyTorch framework.
+    quote: A Distributed Data-Parallel PyTorch Implementation of the Distributed Shampoo Optimizer for Training Neural Networks
+      At-Scale
+  aliases: []
+  role: Used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''

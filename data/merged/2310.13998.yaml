@@ -1,0 +1,371 @@
+title:
+  value: Transductive Learning for Textual Few-Shot Classification in API-based Embedding Models
+  justification: I took the title verbatim from the given research paper.
+  quote: Transductive Learning for Textual Few-Shot Classification in API-based Embedding Models
+description: This paper explores the application of transductive learning for few-shot text classification using API-based
+  embedding models. It introduces a transductive inference method relying on a Fisher-Rao-based loss and presents a benchmark
+  of eight datasets involving multiclass classification in four different languages. Additionally, it contrasts the effectiveness
+  of transductive approaches against traditional inductive methods.
+type:
+  value: empirical study
+  justification: The paper includes experiments with various models, datasets, and methods to highlight the effectiveness
+    of the proposed transductive approach.
+  quote: We evaluate our methods using eight backbone models, along with an episodic evaluation over 1,000 episodes, which
+    demonstrate the superiority of transductive inference over the standard inductive setting.
+primary_research_field:
+  name:
+    value: Few-shot Text Classification
+    justification: ''
+    quote: ''
+  aliases: []
+sub_research_fields:
+- name:
+    value: Transductive learning
+    justification: ''
+    quote: ''
+  aliases: []
+- name:
+    value: Natural Language Processing
+    justification: ''
+    quote: ''
+  aliases:
+  - NLP
+models:
+- name:
+    value: Albert Small V2
+    justification: The paper lists Albert Small V2 as one of the models they consider.
+    quote: Following (Muennighoff et al., 2022), we consider MPNET-base (Song et al., 2020), MiniLM (Wang et al., 2020), and
+      Albert Small V2 (Lan et al., 2019).
+  aliases:
+  - Albert
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: used
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: inference
+  is_compared:
+    value: true
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: BERT
+    justification: BERT is referenced as an example of a large language model used in various NLP tasks.
+    quote: "This approach has led to the development of foundation models such as ChatGPT (Lehman et al., 2023; Kocon\u0301\
+      \ et al., 2023; * Brown et al., 2020), GPT-4 (OpenAI, 2023), GPT-3 (Brown et al., 2020), T5 (Raffel et al., 2020), and\
+      \ BERT (Devlin et al., 2018), which have achieved unprecedented performance in text classification (Liu et al., 2019b),\
+      \ language modeling, machine translation (Fan et al., 2021), and coding tasks (Chen et al., 2021a)."
+  aliases: []
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: referenced
+  is_executed:
+    value: false
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: reference
+  is_compared:
+    value: false
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: ChatGPT
+    justification: ChatGPT is referenced as an example of a large language model available through API.
+    quote: "Furthermore, as stronger foundation models are now available only through APIs (e.g., OpenAI\u2019s GPT-3, GPT-4\
+      \ or ChatGPT, Anthropic\u2019s Claude or Google\u2019s PaLM (Chowdhery et al., 2022)) which has led to some of their\
+      \ parameters being concealed, presenting new challenges for model adaptation (Solaiman, 2023)."
+  aliases: []
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: referenced
+  is_executed:
+    value: false
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: reference
+  is_compared:
+    value: false
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: RoBERTa
+    justification: RoBERTa is explicitly mentioned in the paper as a pretrained backbone model used for evaluation.
+    quote: We consider two different sizes of the RoBERTa model, namely RoBERTa (B) with 124M parameters and RoBERTa (L) with
+      355M parameters and DistilRoBERTa, a lighter version of RoBERTa trained through a distillation process (Hinton et al.,
+      2015), for a total of 82M parameters.
+  aliases:
+  - RoBERTa (B)
+  - RoBERTa (L)
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: used
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: inference
+  is_compared:
+    value: true
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: DistilRoBERTa
+    justification: DistilRoBERTa is used as a backbone model for evaluation. It is a distilled (lighter) version of RoBERTa.
+    quote: Three different sizes of RoBERTa based models (Liu et al., 2019b). ... and DistilRoBERTa, a lighter version of
+      RoBERTa trained through a distillation process.
+  aliases:
+  - DistilRoBERTa (S)
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: used
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: reference
+  is_compared:
+    value: true
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: GPT-3
+    justification: GPT-3 is referenced as an example of a large language model available through API.
+    quote: "Furthermore, as stronger foundation models are now available only through APIs (e.g., OpenAI\u2019s GPT-3, GPT-4\
+      \ or ChatGPT, Anthropic\u2019s Claude or Google\u2019s PaLM (Chowdhery et al., 2022)) which has led to some of their\
+      \ parameters being concealed, presenting new challenges for model adaptation (Solaiman, 2023)."
+  aliases: []
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: referenced
+  is_executed:
+    value: false
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: reference
+  is_compared:
+    value: false
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: GPT-4
+    justification: GPT-4 is referenced as an example of a large language model available through API.
+    quote: "Furthermore, as stronger foundation models are now available only through APIs (e.g., OpenAI\u2019s GPT-3, GPT-4\
+      \ or ChatGPT, Anthropic\u2019s Claude or Google\u2019s PaLM (Chowdhery et al., 2022)) which has led to some of their\
+      \ parameters being concealed, presenting new challenges for model adaptation (Solaiman, 2023)."
+  aliases: []
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: referenced
+  is_executed:
+    value: false
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: reference
+  is_compared:
+    value: false
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: MiniLM
+    justification: MiniLM is listed as one of the sentence-transformers used in their experiments.
+    quote: Following (Muennighoff et al., 2022), we consider MPNET-base (Song et al., 2020), MiniLM (Wang et al., 2020), and
+      Albert Small V2 (Lan et al., 2019).
+  aliases: []
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: used
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: inference
+  is_compared:
+    value: true
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: mpnet
+    justification: MPNET is explicitly mentioned in the paper as a model they consider.
+    quote: Following (Muennighoff et al., 2022), we consider MPNET-base (Song et al., 2020), MiniLM (Wang et al., 2020), and
+      Albert Small V2 (Lan et al., 2019).
+  aliases:
+  - MPNET-base
+  - MPNET-base (B)
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: used
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: inference
+  is_compared:
+    value: true
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: T5
+    justification: T5 is referenced as an example of a large language model used in various NLP tasks.
+    quote: "This approach has led to the development of foundation models such as ChatGPT (Lehman et al., 2023; Kocon\u0301\
+      \ et al., 2023; * Brown et al., 2020), GPT-4 (OpenAI, 2023), GPT-3 (Brown et al., 2020), T5 (Raffel et al., 2020), and\
+      \ BERT (Devlin et al., 2018), which have achieved unprecedented performance in text classification (Liu et al., 2019b),\
+      \ language modeling, machine translation (Fan et al., 2021), and coding tasks (Chen et al., 2021a)."
+  aliases: []
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: referenced
+  is_executed:
+    value: false
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: reference
+  is_compared:
+    value: false
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: text-davinci
+    justification: The paper discusses the use of the text-davinci model for evaluating few-shot learning scenarios.
+    quote: "To mimic the typical setting of API-based models, we also conduct experiments on text-davinci, only accessible\
+      \ through OpenAI\u2019s API."
+  aliases: []
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: used
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: inference
+  is_compared:
+    value: true
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: XLM-RoBERTa
+    justification: XLM-RoBERTa is used as a backbone model for evaluation in different sizes.
+    quote: 'To address realistic multilingual scenarios, we rely on three sizes of XLM-RoBERTa (Conneau et al., 2020, 2019):
+      base (B), large (L) and XL (XL).'
+  aliases:
+  - XLM-RoBERTa (B)
+  - XLM-RoBERTa (L)
+  - XLM-RoBERTa (XL)
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: used
+  is_executed:
+    value: false
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: reference
+  is_compared:
+    value: false
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+datasets:
+- name:
+    value: banking
+    justification: The Banking dataset is explicitly mentioned in the paper as one of the eight datasets used.
+    quote: Specifically, we choose Go Emotion (Demszky et al., 2020), Tweet Eval (Barbieri et al., 2020), Clinc (Larson et
+      al., 2019), Banking (Casanueva et al., 2020) and the Multilingual Amazon Reviews Corpus (Keung et al., 2020).
+  aliases: []
+  role: used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: clinc
+    justification: The Clinc dataset is listed among those used for benchmarks in the paper.
+    quote: Specifically, we choose Go Emotion (Demszky et al., 2020), Tweet Eval (Barbieri et al., 2020), Clinc (Larson et
+      al., 2019), Banking (Casanueva et al., 2020) and the Multilingual Amazon Reviews Corpus (Keung et al., 2020).
+  aliases: []
+  role: used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: GoEmotions
+    justification: The GoEmotions dataset is mentioned as a dataset used for benchmarking.
+    quote: Specifically, we choose Go Emotion (Demszky et al., 2020), Tweet Eval (Barbieri et al., 2020), Clinc (Larson et
+      al., 2019), Banking (Casanueva et al., 2020) and the Multilingual Amazon Reviews Corpus (Keung et al., 2020).
+  aliases: []
+  role: used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: Multilingual Amazon Reviews Corpus
+    justification: The papers mentions using the Multilingual Amazon Reviews Corpus for their experiments.
+    quote: Specifically, we choose Go Emotion (Demszky et al., 2020), Tweet Eval (Barbieri et al., 2020), Clinc (Larson et
+      al., 2019), Banking (Casanueva et al., 2020) and the Multilingual Amazon Reviews Corpus (Keung et al., 2020).
+  aliases: []
+  role: used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: TweetEval
+    justification: TweetEval is explicitly cited as one of the datasets used for their experimental setting.
+    quote: Specifically, we choose Go Emotion (Demszky et al., 2020), Tweet Eval (Barbieri et al., 2020), Clinc (Larson et
+      al., 2019), Banking (Casanueva et al., 2020) and the Multilingual Amazon Reviews Corpus (Keung et al., 2020).
+  aliases: []
+  role: used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+libraries: []

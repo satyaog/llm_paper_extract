@@ -1,0 +1,181 @@
+title:
+  value: Pruning Sparse Tensor Neural Networks Enables Deep Learning for 3D Ultrasound Localization Microscopy
+  justification: This is the formal title of the research paper.
+  quote: Pruning Sparse Tensor Neural Networks Enables Deep Learning for 3D Ultrasound Localization Microscopy
+description: This paper explores the use of Sparse Tensor Neural Networks to reduce memory usage and improve the performance
+  of deep learning models for 3D Ultrasound Localization Microscopy (ULM). Several approaches to efficiently convert ultrasound
+  data into a sparse format are examined, along with the impacts on performance and memory requirements. The study shows that
+  sparse formulations can significantly reduce memory costs and enable effective scaling of ULM from 2D to 3D, even with high
+  concentrations of microbubbles.
+type:
+  value: empirical
+  justification: The paper conducts experiments to study the memory usage and performance improvement of using Sparse Tensor
+    Neural Networks in 3D ULM.
+  quote: "Our contributions can be summarized as follows: \u2022 A sparse formulation of Deep-stULM outperforming conventional\
+    \ ULM in 2D. \u2022 A comparative study in silico between ULM and the proposed approach under varying concentrations in\
+    \ 3D. \u2022 A 2-D in silico study of performance and memory usage of dense-to-sparse conversion strategies."
+primary_research_field:
+  name:
+    value: Microscopy
+    justification: The primary focus is on applying deep learning techniques to improve 3D Ultrasound Localization Microscopy.
+    quote: "Index Terms\u2014Deep Learning, 3D imaging, Ultrasound Localization Microscopy (ULM), Sparse Tensor Neural Networks"
+  aliases: []
+sub_research_fields:
+- name:
+    value: medical imaging
+    justification: The application domain of the deep learning methods discussed is in medical imaging, specifically ultrasound
+      localization microscopy.
+    quote: Ultrasound Localization Microscopy (ULM) is an imaging method that non-invasively maps the vascular tree and blood
+      velocities at depth in vivo.
+  aliases: []
+- name:
+    value: 3D imaging
+    justification: ''
+    quote: ''
+  aliases: []
+- name:
+    value: Ultrasound Localization Microscopy
+    justification: ''
+    quote: ''
+  aliases: ['ULM']
+- name:
+    value: Sparse Tensor Neural Networks
+    justification: ''
+    quote: ''
+  aliases: []
+models:
+- name:
+    value: Conventional ULM
+    justification: This is another deep learning model used as a baseline for performance comparisons.
+    quote: We also provide the results of a standard, non-deep-learning ULM method, described in [3].
+  aliases:
+  - ULM
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: referenced
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: inference
+  is_compared:
+    value: true
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: In Vivo Pulsatility Measurement of Cerebral Microcirculation in Rodents Using Dy- namic Ultrasound Localization
+      Microscopy
+    justification: ''
+    quote: ''
+- name:
+    value: Deep-stULM
+    justification: Deep-stULM is a significant deep learning model discussed in the paper for Ultrasound Localization Microscopy.
+    quote: We converted the dense Deep-stULM architecture to a sparse formulation without additional change, this approach
+      is designated as Sparse Deep-stULM hereafter.
+  aliases: []
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: used
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: inference
+  is_compared:
+    value: true
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: A Deep Learning Framework for Spatiotemporal Ultrasound Localization Microscopy
+    justification: ''
+    quote: ''
+- name:
+    value: Sparse Deep-stULM
+    justification: This sparse version of the Deep-stULM model is central to the paper's contributions.
+    quote: We converted the dense Deep-stULM architecture to a sparse formulation without additional change, this approach
+      is designated as Sparse Deep-stULM hereafter.
+  aliases: []
+  is_contributed:
+    value: true
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: contributed
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: training
+  is_compared:
+    value: true
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+datasets:
+- name:
+    value: 2D ULM Dataset
+    justification: This 2D dataset was specifically used for training and evaluating the Sparse Tensor Neural Networks.
+    quote: '1) 2D dataset: To compare Sparse Tensor Neural Networks with their dense counterpart, we based our study on a
+      previously introduced dense method [22] and used the same 2D dataset based on the previously published simulation pipeline.'
+  aliases: []
+  role: used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: 3D ULM Dataset
+    justification: This 3D dataset was used to extend the study from 2D to 3D ULM and evaluate performance and memory requirements.
+    quote: '2) 3D Dataset: The 3D dataset was obtained similarly but since they contain more parameters, additional microbubble
+      trajectories were included to reduce overfitting.'
+  aliases: []
+  role: used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: SIMUS
+    justification: The dataset used is indicated to be simulated using the SIMUS framework.
+    quote: The ultrasound signal corresponding to the microbubble position was simulated using an in-house GPU implementation
+      of SIMUS [28] with parameters corresponding to an L22-14 probe (Vermon, Tours).
+  aliases: []
+  role: Used
+  referenced_paper_title:
+    value: "\u201CSIMUS: An Open-Source Simulator for Medical Ultrasound Imaging."
+    justification: ''
+    quote: ''
+libraries:
+- name:
+    value: CometML
+    justification: CometML was used to monitor the memory usage during training.
+    quote: 'c) Memory monitoring: We monitored the memory usage of the training using CometML and took the maximum value reached
+      during the training of each method.'
+  aliases: []
+  role: used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: MinkowskiEngine
+    justification: The Python library MinkowskiEngine was used for implementing Sparse Tensor Neural Networks.
+    quote: After the dense-to-sparse operation, the sparse tensor containing the low-resolution signal was given as input
+      to a Sparse Tensor Neural Network implemented using the Python library MinkowskiEngine [25].
+  aliases: []
+  role: Used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: PyTorch
+    justification: PyTorch is a popular deep learning library that was used for the implementation of models in the study.
+    quote: '2) Training procedure: For the 2D models based on Deep-stULM, the hyperparameters were set to the same value as
+      in the original study [22]: the optimizer used was Adam [29] and the training was divided into two parts.'
+  aliases: []
+  role: used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''

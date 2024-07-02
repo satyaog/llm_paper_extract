@@ -1,0 +1,126 @@
+title:
+  value: Maximum State Entropy Exploration using Predecessor and Successor Representations
+  justification: It is the exact title of the paper provided by the user.
+  quote: Maximum State Entropy Exploration using Predecessor and Successor Representations
+description: "The paper introduces \u03B7\u03C8-Learning, an algorithm designed to improve exploration strategies in reinforcement\
+  \ learning by efficiently utilizing past episodic experiences. By maximizing the entropy of the state visitation distribution\
+  \ in a finite-length trajectory, \u03B7\u03C8-Learning aids in methodical exploration."
+type:
+  value: empirical
+  justification: "The paper conducts experiments to demonstrate the effectiveness of \u03B7\u03C8-Learning in various environments,\
+    \ which indicates an empirical nature."
+  quote: "Our experiments demonstrate the efficacy of \u03B7\u03C8-Learning to strategically explore the environment and maximize\
+    \ the state coverage with limited samples."
+primary_research_field:
+  name:
+    value: Reinforcement learning
+    justification: ''
+    quote: ''
+  aliases: []
+sub_research_fields: []
+models:
+- name:
+    value: "\u03B7\u03C8-Learning"
+    justification: "The paper proposes \u03B7\u03C8-Learning as the main algorithm for learning efficient exploration strategies."
+    quote: "In this paper, we present \u03B7\u03C8-Learning, an algorithm to learn an exploration policy that methodically\
+      \ searches through a task."
+  aliases: []
+  is_contributed:
+    value: true
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: contributed
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: trained
+  is_compared:
+    value: true
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: MaxEnt
+    justification: ''
+    quote: ''
+  aliases: []
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: ''
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: ''
+  is_compared:
+    value: true
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+datasets:
+- name:
+    value: ChainMDP
+    justification: ''
+    quote: ''
+  aliases: []
+  role: used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: RiverSwim
+    justification: ''
+    quote: ''
+  aliases: []
+  role: used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: 5x5 Gridworld
+    justification: ''
+    quote: ''
+  aliases: []
+  role: used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: TwoRooms
+    justification: ''
+    quote: ''
+  aliases: []
+  role: used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: FourRooms
+    justification: ''
+    quote: ''
+  aliases: []
+  role: used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+libraries:
+- name:
+    value: RLHive
+    justification: "RLHive was used to implement the proposed method \u03B7\u03C8-Learning and to conduct the experiments."
+    quote: The implementation of the proposed method was done using the RLHive (Patil et al., 2023) library.
+  aliases: []
+  role: used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''

@@ -1,0 +1,61 @@
+title:
+  value: ON THE STABILITY OF A NON-HYPERBOLIC NONLINEAR MAP WITH NON-BOUNDED SET OF NON-ISOLATED FIXED POINTS WITH APPLICATIONS
+    TO MACHINE LEARNING
+  justification: This is the official title provided at the beginning of the paper.
+  quote: ON THE STABILITY OF A NON-HYPERBOLIC NONLINEAR MAP WITH NON-BOUNDED SET OF NON-ISOLATED FIXED POINTS WITH APPLICATIONS
+    TO MACHINE LEARNING
+description: This paper explores the stability and convergence analysis of the SUCPA (Semi Unsupervised Calibration through
+  Prior Adaptation) algorithm. It addresses both theoretical dynamical systems properties and empirical validation through
+  machine learning applications.
+type:
+  value: Theoretical and Empirical
+  justification: The paper includes both theoretical analysis of the SUCPA algorithm's convergence properties and empirical
+    validation using real-world datasets.
+  quote: Numerical experiments on real-world application are performed to support the theoretical results by means of two
+    different classification problems
+primary_research_field:
+  name:
+    value: Deep Learning Optimization
+    justification: The paper investigates a machine learning algorithm (SUCPA) in the context of stability and validation
+      against neural network models like GPT-2 and ResNet-18.
+    quote: The SUCPA algorithm was first developed in the context of supervised machine learning classifiers.
+  aliases: []
+sub_research_fields:
+- name:
+    value: Algorithm Convergence
+    justification: The paper's main contribution lies in analyzing the convergence and stability of the SUCPA algorithm.
+    quote: This paper deals with the convergence analysis of the SUCPA (Semi Unsupervised Calibration through Prior Adaptation)
+      algorithm.
+  aliases: []
+- name:
+    value: Model Calibration
+    justification: The main focus of the paper is on the convergence and stability of the SUCPA algorithm, which is used for
+      calibration of machine learning classifiers.
+    quote: This paper deals with the convergence analysis of the SUCPA (Semi Unsupervised Calibration through Prior Adaptation)
+      algorithm
+  aliases: []
+models:
+- name:
+    value: SUCPA
+    justification: The entire paper is centered around the SUCPA algorithm, analyzing its convergence and stability properties.
+    quote: This paper deals with the convergence analysis of the SUCPA (Semi Unsupervised Calibration through Prior Adaptation)
+      algorithm
+  aliases: []
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: ''
+  is_executed:
+    value: false
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: ''
+  is_compared:
+    value: false
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+datasets: []
+libraries: []

@@ -1,0 +1,209 @@
+title:
+  value: Explainable Attention for Few-shot Learning and Beyond
+  justification: The title accurately represents the paper's focus on introducing an explainable attention mechanism for improving
+    few-shot learning and exploring its applicability beyond just few-shot learning scenarios.
+  quote: Explainable Attention for Few-shot Learning and Beyond
+description: The paper introduces FewXAT, a framework for explainable hard attention finding in few-shot learning. It uses
+  deep reinforcement learning to identify and focus on the most informative regions in images, improving model performance
+  and interpretability while reducing computational complexity.
+type:
+  value: Empirical Study
+  justification: The paper conducts extensive experiments on benchmark datasets to demonstrate the effectiveness of the proposed
+    FewXAT method.
+  quote: Through extensive experimentation across various benchmark datasets, we demonstrate the efficacy of our proposed
+    method.
+primary_research_field:
+  name:
+    value: Few-shot Learning
+    justification: The paper contributes to the field of deep learning by introducing a novel attention mechanism specifically
+      tailored for few-shot learning.
+    quote: Attention mechanisms have exhibited promising potential in enhancing learning models by identifying salient portions
+      of input data.
+  aliases: []
+sub_research_fields:
+- name:
+    value: Explainable AI
+    justification: ''
+    quote: ''
+  aliases: []
+models:
+- name:
+    value: FewXAT
+    justification: FewXAT is the novel model introduced in this paper for explainable hard attention finding in few-shot learning.
+    quote: In this paper, we propose a novel explainable hard attention-finding approach for few-shot learning, called FewXAT.
+  aliases: []
+  is_contributed:
+    value: true
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: contributed
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: training
+  is_compared:
+    value: true
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: Prototypical Networks
+    justification: Prototypical Networks are used as a baseline model for comparison in the paper.
+    quote: Prototypical Networks (ProtNet) is one of the most popular metric-based approaches in few-shot learning, proposed
+      by Snell et al. (Snell, Swersky, and Zemel 2017).
+  aliases:
+  - ProtoNet
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: used
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: ''
+  is_compared:
+    value: true
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: Prototypical Networks
+    justification: Prototypical Networks are used as a baseline model for comparison in the paper.
+    quote: Prototypical Networks (ProtNet) is one of the most popular metric-based approaches in few-shot learning, proposed
+      by Snell et al. (Snell, Swersky, and Zemel 2017).
+  aliases:
+  - ProtNet
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: used
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: ''
+  is_compared:
+    value: true
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: Conv-4
+    justification: ''
+    quote: ''
+  aliases: []
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: used
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: ''
+  is_compared:
+    value: true
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: ResNet-10
+    justification: ''
+    quote: ''
+  aliases: []
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: used
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: ''
+  is_compared:
+    value: true
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+datasets:
+- name:
+    value: CIFAR-FS
+    justification: CIFAR-FS is another benchmark dataset used to evaluate the performance of the FewXAT method.
+    quote: To evaluate the effectiveness of our proposed FewXAT approach, we conducted experiments on four commonly employed
+      datasets for few-shot learning...CIFAR-FS (Krizhevsky, Hinton et al. 2009)...
+  aliases: []
+  role: Used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: CUB
+    justification: The CUB dataset is used in the paper to demonstrate the performance of the FewXAT method in the few-shot
+      learning context.
+    quote: To evaluate the effectiveness of our proposed FewXAT approach, we conducted experiments on four commonly employed
+      datasets for few-shot learning...CUB (Welinder et al. 2010)...
+  aliases: []
+  role: Used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: FC-100
+    justification: FC-100 is a benchmark dataset for few-shot learning on which the FewXAT method's effectiveness is tested.
+    quote: To evaluate the effectiveness of our proposed FewXAT approach, we conducted experiments on four commonly employed
+      datasets for few-shot learning...FC-100(Krizhevsky, Hinton et al. 2009)...
+  aliases: []
+  role: Used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: ImageNet10
+    justification: ImageNet10 is used to demonstrate the applicability of the FewXAT method beyond few-shot learning tasks.
+    quote: To show the effectiveness of our proposed method on other tasks rather than few-shot learning, we chose the classification
+      task of two popular benchmark datasets which are ImageNet10 and ImageNetdog.
+  aliases: []
+  role: Used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: ImageNetdog
+    justification: ImageNetdog is used in the paper to showcase the method's potential applicability to broader computer vision
+      tasks.
+    quote: To show the effectiveness of our proposed method on other tasks rather than few-shot learning, we chose the classification
+      task of two popular benchmark datasets which are ImageNet10 and ImageNetdog.
+  aliases: []
+  role: Used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: MiniImageNet
+    justification: MiniImageNet is one of the commonly employed datasets for evaluating the performance of few-shot learning
+      methods, including the proposed FewXAT method.
+    quote: To evaluate the effectiveness of our proposed FewXAT approach, we conducted experiments on four commonly employed
+      datasets for few-shot learning, MiniImageNet (Ravi and Larochelle 2016)...
+  aliases: []
+  role: Used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+libraries: []
