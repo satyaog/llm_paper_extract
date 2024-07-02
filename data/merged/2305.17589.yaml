@@ -1,0 +1,572 @@
+title:
+  value: Graph Inductive Biases in Transformers without Message Passing
+  justification: This is the exact title of the paper provided by the user and matches the content reviewed.
+  quote: Graph Inductive Biases in Transformers without Message Passing
+description: The paper proposes GRIT (Graph Inductive bias Transformer) that incorporates graph inductive biases without using
+  traditional message-passing modules. It aims to address limitations of message-passing Graph Neural Networks and achieves
+  state-of-the-art performance on various graph datasets.
+type:
+  value: empirical study
+  justification: The paper includes detailed experimental results, benchmarking against other models, and empirical evaluations
+    to demonstrate the effectiveness of the proposed model.
+  quote: Along with theoretical justification, we provide ample empirical evidence to demonstrate the effectiveness of our
+    design choices. GRIT achieves state-of-the-art empirical performance across a variety of graph learning benchmarks, both
+    small and large-scale.
+primary_research_field:
+  name:
+    value: Deep Learning
+    justification: The paper focuses on advancements in transformer architectures and graph neural networks, which are central
+      topics in the field of deep learning.
+    quote: Transformers for graph data are increasingly widely studied and successful in numerous learning tasks.
+  aliases: [Graph Neural Networks, Deep Learning on Graphs]
+sub_research_fields:
+- name:
+    value: Graph Neural Networks
+    justification: The paper is centered around innovative techniques for Graph Transformers and their application to graph-based
+      learning tasks, making it specific to the sub-field of Graph Neural Networks within deep learning.
+    quote: On the other hand, Graph Transformers without message-passing often perform poorly on smaller datasets, where inductive
+      biases are more important.
+  aliases: []
+models:
+- name:
+    value: GRIT
+    justification: GRIT is the central model that the paper introduces and evaluates.
+    quote: "To bridge this gap, we propose the Graph Inductive bias Transformer (GRIT) \u2014 a new Graph Transformer that\
+      \ incorporates graph inductive biases without using message passing."
+  aliases: []
+  is_contributed:
+    value: true
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: contributed
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: trained
+  is_compared:
+    value: true
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: GraphGPS
+    justification: They compare against GraphGPS
+    quote: We primarily compare our methods with the recent SOTA hybrid Graph Transformer, GraphGPS
+  aliases: []
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: used
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: trained
+  is_compared:
+    value: true
+    justification: (fabrice) it is mentioned as a baseline
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: GCN
+    justification: They compare against GCN
+    quote: We primarily compare our methods with the recent SOTA hybrid Graph Transformer, GraphGPS
+  aliases: []
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: used
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: trained
+  is_compared:
+    value: true
+    justification: (fabrice) it is mentioned as a baseline
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: GCN
+    justification: mentioned in the baselines paragraph.
+    quote: We primarily compare our methods with ...
+  aliases: []
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: used
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: trained
+  is_compared:
+    value: true
+    justification: Table 1
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: GIN
+    justification: mentioned in the baselines paragraph.
+    quote: We primarily compare our methods with ...
+  aliases: []
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: used
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: trained
+  is_compared:
+    value: true
+    justification: Table 1
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: GAT
+    justification: mentioned in the baselines paragraph.
+    quote: We primarily compare our methods with ...
+  aliases: []
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: used
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: trained
+  is_compared:
+    value: true
+    justification: Table 1
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: GatedGCN
+    justification: mentioned in the baselines paragraph.
+    quote: We primarily compare our methods with ...
+  aliases: []
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: used
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: trained
+  is_compared:
+    value: true
+    justification: Table 1
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: GatenGCN-LSPE
+    justification: mentioned in the baselines paragraph.
+    quote: We primarily compare our methods with ...
+  aliases: []
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: used
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: trained
+  is_compared:
+    value: true
+    justification: Table 1
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: PNA
+    justification: mentioned in the baselines paragraph.
+    quote: We primarily compare our methods with ...
+  aliases: []
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: used
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: trained
+  is_compared:
+    value: true
+    justification: Table 1
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: Graphormer
+    justification: mentioned in the baselines paragraph.
+    quote: We primarily compare our methods with ...
+  aliases: []
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: used
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: trained
+  is_compared:
+    value: true
+    justification: Table 1
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: K-Subgraph SAT
+    justification: mentioned in the baselines paragraph.
+    quote: We primarily compare our methods with ...
+  aliases: []
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: used
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: trained
+  is_compared:
+    value: true
+    justification: Table 1
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: EGT
+    justification: mentioned in the baselines paragraph.
+    quote: We primarily compare our methods with ...
+  aliases: []
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: used
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: trained
+  is_compared:
+    value: true
+    justification: Table 1
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: SAN
+    justification: mentioned in the baselines paragraph.
+    quote: We primarily compare our methods with ...
+  aliases: []
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: used
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: trained
+  is_compared:
+    value: true
+    justification: Table 1
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: Graphormer-URPE
+    justification: mentioned in the baselines paragraph.
+    quote: We primarily compare our methods with ...
+  aliases: []
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: used
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: trained
+  is_compared:
+    value: true
+    justification: Table 1
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: Graphormer-GD
+    justification: mentioned in the baselines paragraph.
+    quote: We primarily compare our methods with ...
+  aliases: []
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: used
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: trained
+  is_compared:
+    value: true
+    justification: Table 1
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: DGN
+    justification: mentioned in the baselines paragraph.
+    quote: We primarily compare our methods with ...
+  aliases: []
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: used
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: trained
+  is_compared:
+    value: true
+    justification: Table 1
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: GSN
+    justification: mentioned in the baselines paragraph.
+    quote: We primarily compare our methods with ...
+  aliases: []
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: used
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: trained
+  is_compared:
+    value: true
+    justification: Table 1
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: CIN
+    justification: mentioned in the baselines paragraph.
+    quote: We primarily compare our methods with ...
+  aliases: []
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: used
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: trained
+  is_compared:
+    value: true
+    justification: Table 1
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: CRaW1
+    justification: mentioned in the baselines paragraph.
+    quote: We primarily compare our methods with ...
+  aliases: []
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: used
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: trained
+  is_compared:
+    value: true
+    justification: Table 1
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: GIN-AK+
+    justification: mentioned in the baselines paragraph.
+    quote: We primarily compare our methods with ...
+  aliases: []
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: used
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: trained
+  is_compared:
+    value: true
+    justification: Table 1
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+datasets:
+- name:
+    value: CIFAR10
+    justification: The CIFAR10 dataset is used as part of the evaluation of the model on graph-based learning tasks.
+    quote: We show that our model has the best mean performance for four of the five datasets with statistically significant
+      improvement... CIFAR10
+  aliases: []
+  role: used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: CLUSTER
+    justification: The CLUSTER dataset is used to evaluate the model's performance in node classification tasks.
+    quote: We show that our model has the best mean performance for four of the five datasets with statistically significant
+      improvement... CLUSTER
+  aliases: []
+  role: used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: MNIST
+    justification: The MNIST dataset is used to benchmark the model's performance on graph-based node classification tasks.
+    quote: We show that our model has the best mean performance for four of the five datasets with statistically significant
+      improvement... MNIST
+  aliases: []
+  role: used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: PATTERN
+    justification: The PATTERN dataset is involved in demonstrating the model's empirical performance.
+    quote: We show that our model has the best mean performance for four of the five datasets with statistically significant
+      improvement... PATTERN
+  aliases: []
+  role: used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: PCQM4Mv2
+    justification: PCQM4Mv2 is used as a benchmark in the experiments to demonstrate GRIT's performance.
+    quote: For the large PCQM4MV2 dataset (about 3,700,000 graphs) (Hu et al., 2021), Graph Transformers take up the top spots.
+  aliases: []
+  role: Used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: PCQM4Mv2
+    justification: The PCQM4Mv2 dataset is used to evaluate the model on large-scale graph regression tasks.
+    quote: For the large PCQM4MV2 dataset (about 3,700,000 graphs) (Hu et al., 2021), Graph Transformers take up the top spots.
+  aliases: []
+  role: used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: Peptides-func
+    justification: Peptides-func is used to evaluate the model on long-range graph benchmarks.
+    quote: Next, we evaluate our method on the recently proposed Long-Range Graph Benchmark (LRGB). We conduct experiments
+      on the two peptide graph benchmarks from LRGB, namely Peptides-func and Peptides-struct.
+  aliases: []
+  role: used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: Peptides-struct
+    justification: Peptides-struct is used for evaluating the model on structural properties in graphs.
+    quote: Next, we evaluate our method on the recently proposed Long-Range Graph Benchmark (LRGB). We conduct experiments
+      on the two peptide graph benchmarks from LRGB, namely Peptides-func and Peptides-struct.
+  aliases: []
+  role: used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: ZINC
+    justification: ZINC is one of the benchmarks used to evaluate the performance of the GRIT model.
+    quote: On the small ZINC dataset (12,000 graphs) (Dwivedi et al., 2022a), GNNs that rely on message-passing take up the
+      top spots on the leaderboards.
+  aliases: []
+  role: Used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: ZINC
+    justification: The ZINC dataset is used to benchmark the model's performance.
+    quote: On the small ZINC dataset (12,000 graphs) (Dwivedi et al., 2022a), GNNs that rely on message-passing take up the
+      top spots on the leaderboards.
+  aliases: []
+  role: used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: ZINC-full
+    justification: ZINC-full is a larger version of the ZINC dataset used for comprehensive evaluation.
+    quote: We also test our model on the ZINCfull dataset (Irwin et al., 2012), which is the full version of ZINC that has
+      250,000 graphs.
+  aliases: []
+  role: used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+libraries: []

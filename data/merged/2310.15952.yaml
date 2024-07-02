@@ -1,0 +1,270 @@
+title:
+  value: Improving Robustness and Reliability in Medical Image Classification with Latent-Guided Diffusion and Nested-Ensembles
+  justification: Derived from the title page and recurring mention throughout the text.
+  quote: Improving Robustness and Reliability in Medical Image Classification with Latent-Guided Diffusion and Nested-Ensembles
+description: This paper introduces a three-stage approach integrating transformers and conditional diffusion models to improve
+  model robustness in medical image classification. It includes learning hierarchical feature representations, a reverse diffusion
+  process guided by latent code to propose prediction candidates, and a bilevel aggregation protocol for final output.
+type:
+  value: Empirical Study
+  justification: The paper describes experiments and evaluations conducted on benchmark datasets to validate the proposed
+    method.
+  quote: Through extensive experiments on medical imaging benchmark datasets, we show that our method improves upon state-of-the-art
+    methods in terms of robustness and confidence calibration.
+primary_research_field:
+  name:
+    value: Deep Learning
+    justification: The paper focuses on developing and evaluating deep learning models for medical image classification.
+    quote: In the rapidly evolving domain of medical imaging analysis, deep learning has emerged as a cornerstone for diagnostic
+      advancements.
+  aliases: []
+sub_research_fields:
+- name:
+    value: Medical Image Analysis
+    justification: The paper specifically addresses the challenges and improvements in medical image classification, a sub-field
+      of medical image analysis.
+    quote: This this work, we introduce a novel framework for medical image classification that inherently copes with these
+      discrepancies.
+  aliases: []
+- name:
+    value: Medical Imaging
+    justification: The paper specifically targets medical image classification tasks, addressing robustness challenges in
+      clinical implementations.
+    quote: "While many methods apply predefined transformations to augment the training data to enhance test-time robustness,\
+      \ these transformations may not ensure the model\u2019s robustness to the diverse variability seen in patient images."
+  aliases: []
+models:
+- name:
+    value: ConViT-B
+    justification: Referenced and used as a baseline in experimental comparisons.
+    quote: ConViT-B [47]
+  aliases:
+  - ConViT-B
+  - ConViT
+  - Vision Transformer
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: used
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: train
+  is_compared:
+    value: true
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: DeiT-B
+    justification: Referenced and used as a baseline in experimental comparisons.
+    quote: DeiT-B [45]
+  aliases: []
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: used
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: train
+  is_compared:
+    value: true
+    justification: table 1
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: EfficientNetV2-L
+    justification: Referenced and used as a baseline in experimental comparisons.
+    quote: 'We choose a range of baseline methods that cover various architectures: CNNs, transformers, and hybrid models
+      with both CNNs and transformers. Note that we only train models on the original domain, in other words, where no data
+      augmentation is applied to the training set image. We compare our method with baselines that are widely used in medical
+      image analysis with classification accuracy and confidence calibration error as metrics.'
+  aliases:
+  - EfficientNetV2
+  - EfficientNet
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: used
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: train
+  is_compared:
+    value: true
+    justification: table 1
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: MedViT-B
+    justification: Referenced and used as a baseline in experimental comparisons.
+    quote: MedViT-B [18]
+  aliases:
+  - MedViT
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: used
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: train
+  is_compared:
+    value: true
+    justification: ''
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: ResNet-18
+    justification: Referenced and used as a baseline in experimental comparisons.
+    quote: ResNet-18 [40]
+  aliases:
+  - ResNet18
+  - ResNet
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: used
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: train
+  is_compared:
+    value: true
+    justification: table 1
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: ResNet-50
+    justification: Referenced and used as a baseline in experimental comparisons.
+    quote: ResNet-50 [40]
+  aliases:
+  - ResNet50
+  - ResNet
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: used
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: train
+  is_compared:
+    value: true
+    justification: table 1
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: SEViT
+    justification: Referenced and used as a baseline in experimental comparisons.
+    quote: SEViT [19]
+  aliases: []
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: used
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: train
+  is_compared:
+    value: true
+    justification: table 1
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: Swin-B
+    justification: Referenced and used as a baseline in experimental comparisons.
+    quote: Swin-B [46]
+  aliases: []
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: used
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: train
+  is_compared:
+    value: true
+    justification: table 1
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: ViT-B
+    justification: Referenced as a part of the study, likely used in comparisons and baseline experiments.
+    quote: "Note that we only train models on the original domain, in other words, where no data augmentation is applied to\
+      \ the training set image. We compare our method with baselines that are widely used in medical image analysis with classification\
+      \ accuracy and confidence calibration error as metrics [2], [3], [6]\u2013[8], [36]\u2013[39], such as the ResNet [40]\
+      \ family, Vision Transformers (ViTs) [30]."
+  aliases:
+  - ViT-B
+  - ViT-B/16
+  - ViT-B16
+  is_contributed:
+    value: false
+    justification: Role:['contributed', 'used', 'referenced']
+    quote: used
+  is_executed:
+    value: true
+    justification: ModelMode:['trained', 'fine-tuned', 'inference']
+    quote: train
+  is_compared:
+    value: true
+    justification: table 3
+    quote: ''
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+datasets:
+- name:
+    value: Tuberculosis chest X-ray dataset
+    justification: Used for conducting experiments to validate the proposed method.
+    quote: Extensive experiments performed on the Tuberculosis chest X-ray classification benchmark [15]
+  aliases: []
+  role: used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+- name:
+    value: ISIC skin cancer classification benchmark
+    justification: Used for conducting experiments to validate the proposed method.
+    quote: the subset of ISIC skin caner classification benchmark [16]
+  aliases:
+  - ISIC skin cancer classification benchmark
+  - ISIC skin cancer classification dataset
+  - ISIC Melanoma skin cancer dataset
+  - ISIC dataset
+  role: used
+  referenced_paper_title:
+    value: ''
+    justification: ''
+    quote: ''
+libraries: []
